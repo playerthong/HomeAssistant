@@ -30,4 +30,6 @@ install:
 script:
   - hass -c . --script check_config
 before_install:
+  - sed -i '/ssl_certificate: !secret ssl_certificate/d' configuration.yaml
+  - sed -i '/ssl_key: !secret ssl_key' configuration.yaml
   - mv travis_secrets.yaml secrets.yaml
