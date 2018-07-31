@@ -242,13 +242,22 @@
 #       data:
 #        message: 'Home assistant перезагрузился'
 
+# - alias: 'Update config if travis build is successfull'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.gurskiyhomeassistant_last_build_state
+#     to: 'passed'
+#   action:
+#     - service: script.restart_hass
+
 - alias: 'Update config if travis build is successfull'
   trigger:
     platform: state
     entity_id: sensor.gurskiyhomeassistant_last_build_state
     to: 'passed'
   action:
-    - service: script.restart_hass
+    - service: shell_command.git_pull
+    - service: homeassistant.restart
 
 - alias: "Startup Notification"
   trigger:
