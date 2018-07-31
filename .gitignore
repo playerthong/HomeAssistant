@@ -4,6 +4,8 @@
 !customize
 !devices
 !groups
+!bash
+!bash/git_pull.sh
 !scripts
 !automation
 !.gitignore
