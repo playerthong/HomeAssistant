@@ -309,7 +309,7 @@ views:
           - vacuum.xiaomi_vacuum_cleaner
 
       - type: entities
-        title: Проверка
+        title: Проверка1
 
 
 
