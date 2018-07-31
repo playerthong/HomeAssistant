@@ -38,7 +38,6 @@ introduction:
 frontend:
 config:
 
-  
 http:
   api_password: !secret http_password
   ssl_certificate: !secret ssl_certificate
