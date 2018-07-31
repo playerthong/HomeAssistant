@@ -35,20 +35,20 @@ turn_off_all_lights:
 #   sequence:
 #     - service: shell_command.restart_homeassistant
 
-get_latest_config:
-  alias: 'Update config'
-  sequence:
-    - service: shell_command.git_pull
-    - service: shell_command.restart_homeassistant
+# get_latest_config:
+#   alias: 'Update config'
+#   sequence:
+#     - service: shell_command.git_pull
+#     - service: shell_command.restart_homeassistant
 
-restart_hass:
-  alias: Restart Home Assistant
-  sequence:
-    - service: notify.telegram
-      data:
-       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
-    - service: shell_command.git_pull
-    - service: homeassistant.restart
+# restart_hass:
+#   alias: Restart Home Assistant
+#   sequence:
+#     - service: notify.telegram
+#       data:
+#        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
+#     - service: shell_command.git_pull
+#     - service: homeassistant.restart
 
 
   
