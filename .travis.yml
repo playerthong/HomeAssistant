@@ -1,0 +1,33 @@
+# language: python
+# python:
+#   - "3.5"
+# before_install:
+#   - mv travis_secrets.yaml secrets.yaml
+# install:
+#   - pip3 install homeassistant
+# script:
+#   - hass -c . --script check_config
+
+
+
+# language: python
+# python:
+#   - "3.6"
+# before_install:
+#   - cp secrets-dummy.yaml secrets.yaml
+#   - touch home-assistant_v2.db
+#   - touch home-assistant.log
+# install:
+#   - pip3 install homeassistant
+# script:
+#   - hass --script check_config -c . -f
+
+language: python
+python:
+  - "3.5"
+install:
+  - pip3 install homeassistant
+script:
+  - hass -c . --script check_config
+before_install:
+  - mv dummy_secrets.yaml secrets.yaml
