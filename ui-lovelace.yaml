@@ -304,7 +304,7 @@ views:
           - switch.wall_switch_right_158d00012bad35
 
       - type: entities
-        title: All vacuums6
+        title: All vacuums7
         entities:
           - vacuum.xiaomi_vacuum_cleaner
 
