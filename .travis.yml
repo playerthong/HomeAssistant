@@ -30,6 +30,6 @@ install:
 script:
   - hass -c . --script check_config
 before_install:
-  - sed -i 'ssl_certificate: /home/homeassistant/.homeassistant/privkey.pem' configuration.yaml
-  - sed -i 'ssl_key: /home/homeassistant/.homeassistant/fullchain.pem' configuration.yaml
+  - "sed -i '/ ssl_certificate: !secret ssl_certificate/d' configuration.yaml"
+  - "sed -i '/ ssl_key: !secret ssl_key/d' configuration.yaml"
   - mv travis_secrets.yaml secrets.yaml
