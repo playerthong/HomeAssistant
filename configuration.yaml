@@ -157,7 +157,7 @@ input_boolean: !include devices/input_boolean.yaml
 input_number: !include devices/input_number.yaml
 
 climate: !include devices/climate.yaml
-
+shell_command: !include shell_commands.yaml
 dialogflow:
 
 

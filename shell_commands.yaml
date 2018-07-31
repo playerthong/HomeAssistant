@@ -1,0 +1,2 @@
+restart_homeassistant: 'sudo systemctl restart home-assistant@homeassistant'
+git_pull: 'bash /home/homeassistant/.homeassistant/bash/git_pull.sh'

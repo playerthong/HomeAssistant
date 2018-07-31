@@ -239,6 +239,7 @@ views:
       - type: entities
         title: All sensors
         entities:
+          - sensor.gurskiyhomeassistant_last_build_state
           - sensor.humidity_158d000129ab32
           - sensor.humidity_158d0001573ea5
           - sensor.humidity_158d000159f070

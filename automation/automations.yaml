@@ -216,3 +216,12 @@
    - service: notify.telegram
      data:
       message: 'Кажется, дождик начался...'
+
+
+- alias: 'Update config if travis build is successfull'
+  trigger:
+    platform: state
+    entity_id: sensor.gurskiyhomeassistant_last_build_state
+    to: 'passed'
+  action:
+    - service: script.get_latest_config
