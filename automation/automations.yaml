@@ -225,3 +225,6 @@
     to: 'passed'
   action:
     - service: script.get_latest_config
+    - service: notify.telegram
+      data:
+       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
