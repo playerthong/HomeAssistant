@@ -2,4 +2,4 @@
 
 cd "/home/homeassistant/.homeassistant"
 git pull
-sudo systemctl restart home-assistant@homeassistant
+# sudo systemctl restart home-assistant@homeassistant

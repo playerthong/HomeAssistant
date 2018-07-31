@@ -80,18 +80,18 @@
       entity_id: binary_sensor.switch_158d0001560e5a
       click_type: double
   action:
-    - service: remote.send_command
-      entity_id: 'remote.xiaomi_miio_192_168_1_57'
-      data:
-        command:
-          - 'raw:Z6VjAEcCAACYAgAAxAYAAMMRAABsIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ICAAEAAAACAAICAAAAAAAAAAIAAAAAAAACAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAA=='
-    - delay: 00:00:05
-    - service: remote.send_command
-      entity_id: 'remote.xiaomi_miio_192_168_1_57'
-      data:
-        command:
-          - 'raw:Z6VjACQCAABKAgAAwwYAAM8RAABfIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ISEQERARECERISAREBEQERAREBEQERARECEQESAhEBEQERAREBEQERAREBEQERARAA=='
-    - delay: 00:00:01
+    # - service: remote.send_command
+    #   entity_id: 'remote.xiaomi_miio_192_168_1_57'
+    #   data:
+    #     command:
+    #       - 'raw:Z6VjAEcCAACYAgAAxAYAAMMRAABsIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ICAAEAAAACAAICAAAAAAAAAAIAAAAAAAACAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAA=='
+    # - delay: 00:00:05
+    # - service: remote.send_command
+    #   entity_id: 'remote.xiaomi_miio_192_168_1_57'
+    #   data:
+    #     command:
+    #       - 'raw:Z6VjACQCAABKAgAAwwYAAM8RAABfIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ISEQERARECERISAREBEQERAREBEQERARECEQESAhEBEQERAREBEQERAREBEQERARAA=='
+    # - delay: 00:00:01
     - service: input_boolean.toggle
       data:
         entity_id: input_boolean.thermobool
@@ -229,7 +229,8 @@
       data:
        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
     - service: shell_command.git_pull
-    - service: shell_command.restart_homeassistant
+    - service: homeassistant.restart
+    # - service: shell_command.restart_homeassistant
 
 
 - alias: "Startup Notification"
