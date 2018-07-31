@@ -100,3 +100,6 @@
   api_key: !secret google_api
   origin: device_tracker.iphone_pavel
   destination: zone.home
+
+- platform: travisci
+  api_key: !secret travis_api
