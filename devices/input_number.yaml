@@ -1,0 +1,6 @@
+sliderac:
+  name: Температура
+  initial: 21
+  min: 18
+  max: 25
+  step: 1

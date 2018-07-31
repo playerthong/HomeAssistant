@@ -1,0 +1,192 @@
+- alias: coolon
+  trigger:
+    - platform: state
+      entity_id: input_boolean.accoolswitch
+      to: 'on'
+  action:
+    - service: script.ac_cool
+
+- alias: cooloff
+  trigger:
+    - platform: state
+      entity_id: input_boolean.accoolswitch
+      to: 'off'
+  action:
+    - service: script.ac_off
+ 
+- alias: theron
+  trigger:
+    - platform: state
+      entity_id: input_boolean.thermobool
+      to: 'on'
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEcCAACYAgAAxAYAAMMRAABsIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ICAAEAAAACAAICAAAAAAAAAAIAAAAAAAACAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAA=='
+    - delay: 00:00:02
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjACQCAABKAgAAwwYAAM8RAABfIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ISEQERARECERISAREBEQERAREBEQERARECEQESAhEBEQERAREBEQERAREBEQERARAA=='
+ 
+- alias: theroff
+  trigger:
+    - platform: state
+      entity_id: input_boolean.thermobool
+      to: 'off'
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEcCAACYAgAAxAYAAMMRAABsIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ICAAEAAAACAAICAAAAAAAAAAIAAAAAAAACAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAA=='
+    - service: climate.set_temperature
+      entity_id: climate.thermo
+      data_template:
+       temperature: 21
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.sliderac
+        value: 21
+
+- alias: acslid
+  trigger:
+    platform: state
+    entity_id: input_number.sliderac
+  action:
+    service: climate.set_temperature
+    entity_id: climate.thermo
+    data_template:
+      temperature: "{{ states('input_number.sliderac') }}"
+
+- alias: 'COND_18'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '18.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEgCAADIBgAAwhEAAGEjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjEBAAAAAAABAAEBAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=='
+
+- alias: 'COND_19'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '19.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEYCAADCBgAAyBEAAGAjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjEBAAAAAAABAAEBAAAAAAAAAAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=='
+
+- alias: 'COND_20'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '20.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEcCAADHBgAAxxEAAGIjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjEBAAAAAAABAAEBAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=='
+
+- alias: 'COND_21'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '21.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjACQCAABKAgAAwwYAAM8RAABfIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ISEQERARECERISAREBEQERAREBEQERARECEQESAhEBEQERAREBEQERAREBEQERARAA=='
+
+- alias: 'COND_22'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '22.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEgCAADIBgAAxREAAGAjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjEBAAAAAAABAAEBAAAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=='
+
+- alias: 'COND_23'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '23.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAAICAAAlAgAASQIAAMcGAADKEQAAYiMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFMDIhIiEiITIhMjEiISIhIiEiISIhIiEiITIhIjEiMSIhIiEiISIhIiEiISIhIiEiAQ=='
+
+- alias: 'COND_24'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '24.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjACQCAABJAgAAwwYAAMcRAABiIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0ICEQERARECEQISAREBEQERAREBEQERARECEQERAhIBEQERAREBEQERAREBEQERARAA=='
+
+- alias: 'COND_25'
+  initial_state: 'on'
+  condition:
+    - condition: state
+      entity_id: input_number.sliderac
+      state: '25.0'
+  trigger:
+    - platform: state
+      entity_id: input_number.sliderac
+  action:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VjAEYCAADDBgAAxREAAF8jAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjEBAAAAAAABAAEBAAAAAAAAAAAAAAAAAAABAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAA=='
+#

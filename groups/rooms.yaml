@@ -1,0 +1,48 @@
+#lights: 
+ 
+
+#default_view:
+#  view: yes
+#  icon: mdi:home-assistant
+#  entities:
+#    - group.climatefront
+
+
+rooms:
+ name: Rooms
+ icon: mdi:home-assistant
+ view: yes
+ entities:
+   - group.rooms_bigroom
+   - group.rooms_bedroom
+   - group.rooms_hall
+   - group.ac
+
+rooms_bigroom:
+  name: Гостиная
+  entities:
+    - sensor.temperature_158d000129ab32
+    - sensor.humidity_158d000129ab32
+    - media_player.apple_tv_2
+    - fan.xiaomi_miio_device
+    - media_player.google_home
+    - light.yeebigroom
+    - group.ac
+
+rooms_bedroom:
+  name: Спальня
+  entities:
+    - vacuum.xiaomi_vacuum_cleaner
+    - light.yeebedroom
+    - sensor.temperature_158d0001573ea5
+    - sensor.humidity_158d0001573ea5
+
+rooms_hall:
+  name: Коридор
+  entities:
+    - light.gateway_light_f0b429cc3ea7
+    - binary_sensor.door_window_sensor_158d0001840154
+    - binary_sensor.motion_sensor_158d000158281b
+    - switch.wall_switch_158d00014ddc4f
+    - input_boolean.disable_doorbell
+

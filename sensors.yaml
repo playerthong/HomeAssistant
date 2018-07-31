@@ -1,0 +1,102 @@
+# Weather prediction
+- platform: yr
+
+- platform: moon
+
+# - platform: wunderground
+#   entity_namespace: weather
+#   api_key: !secret wunderground_api_key
+#   monitored_conditions:
+#     - temp_high_record_c
+#     - temp_high_1d_c
+#     - temp_c
+#     - temp_low_1d_c
+#     - temp_low_record_c
+#     - precip_1d
+#     - precip_1d_mm
+#     - wind_kph
+#     - wind_1d_kph
+#     - alerts
+
+- platform: yweather
+  woeid: !secret yweather_location
+  forecast: 3
+  monitored_conditions:
+    - weather
+    - weather_current
+    - temp_min
+    - temp_max
+    - wind_speed
+    - pressure
+    - visibility
+    - humidity
+    - temperature
+
+- platform: darksky
+  api_key: !secret darksky_api
+  language: ru  
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - nearest_storm_bearing
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    - ozone
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - temperature_high
+    - temperature_low
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - precip_intensity_max
+    - uv_index
+
+- platform: google_travel_time
+  name: home to work car
+  api_key: !secret google_api
+  origin: zone.home
+  destination: zone.work
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: work to home car
+  api_key: !secret google_api
+  origin: zone.work
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: home to work bus
+  api_key: !secret google_api
+  origin: zone.home
+  destination: zone.work
+  options:
+    mode: transit 
+
+- platform: google_travel_time
+  name: work to home bus
+  api_key: !secret google_api
+  origin: zone.work
+  destination: zone.home
+  options:
+    mode: transit 
+
+- platform: google_travel_time
+  name: Phone To Home
+  api_key: !secret google_api
+  origin: device_tracker.iphone_pavel
+  destination: zone.home

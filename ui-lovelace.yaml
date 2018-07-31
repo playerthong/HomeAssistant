@@ -1,0 +1,314 @@
+title: Home
+views:
+  - title: Home
+    cards:
+      # - type: entity-filter
+      #   entities:
+      #     - device_tracker.iphone_bt
+      #     - device_tracker.iphone_pavel_bt
+      #   state_filter:
+      #     - 'home'
+      #   card:
+      #     type: glance
+      #     title: People that are home
+
+      - type: entities
+        title: Гостиная
+        background: radial-gradient(crimson, skyblue)
+        theme: dark-mode
+        show_header_toggle: false
+        entities:
+          - sensor.temperature_158d000129ab32
+          - sensor.humidity_158d000129ab32
+          - light.yeebigroom
+          #- media_player.apple_tv_2
+          #- media_player.google_home
+         # - group.ac
+          - input_boolean.thermobool
+          - input_number.sliderac
+          - switch.original_xiaomi_mi_smart_wifi_socket
+
+      - type: entities
+        title: Спальня
+        show_header_toggle: false
+        entities:
+          - sensor.temperature_158d0001573ea5
+          - sensor.humidity_158d0001573ea5
+          - light.yeebedroom
+          - vacuum.xiaomi_vacuum_cleaner
+          - fan.xiaomi_miio_device
+
+      - type: entities
+        title: Коридор
+        show_header_toggle: false
+        entities:
+          - switch.wall_switch_158d00014ddc4f
+          - binary_sensor.door_window_sensor_158d0001840154
+          - binary_sensor.motion_sensor_158d000158281b
+          - light.gateway_light_f0b429cc3ea7
+          - input_boolean.disable_doorbell
+
+      - type: entities
+        title: Кухня
+        show_header_toggle: false
+        entities:
+          - sensor.temperature_158d00022cc1c4
+          - sensor.humidity_158d00022cc1c4
+          - sensor.pressure_158d00022cc1c4
+          - switch.wall_switch_left_158d00012bad35
+          - binary_sensor.motion_sensor_158d000113c470
+          - binary_sensor.water_leak_sensor_158d0001d78dda
+
+      - type: entities
+        title: Ванная
+        show_header_toggle: false
+        entities:
+          - sensor.temperature_158d000159f070
+          - sensor.humidity_158d000159f070
+          - switch.wall_switch_right_158d00012bad35
+          - binary_sensor.water_leak_sensor_158d0001d72deb
+          - binary_sensor.motion_sensor_158d00015da341
+
+      - type: entities
+        title: Детская
+        show_header_toggle: false
+        entities:
+          - sensor.temperature_158d00015aea48
+          - sensor.humidity_158d00015aea48
+  
+      - type: entities
+        title: За бортом
+        show_header_toggle: false
+        entities:
+          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_hourly_summary
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_daytime_high_temperature
+          - sensor.dark_sky_overnight_low_temperature
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_uv_index
+          - sensor.dark_sky_wind_speed
+          - sun.sun
+          # - sensor.yweather_temperature
+          # - sensor.yweather_humidity
+          # - sensor.yweather_pressure
+          # - sensor.yweather_current
+          # - sensor.yweather_temperature_max
+          # - sensor.yweather_temperature_min
+          # - sensor.yweather_wind_speed
+
+      - type: entities
+        entities:
+          - device_tracker.iphone_bt
+          - device_tracker.iphone_pavel_bt
+
+      - type: entities
+        title: Время в пути
+        show_header_toggle: false
+        entities:
+          - sensor.phone_to_home_car
+          - sensor.home_to_work_car
+          - sensor.home_to_work_bus
+          - sensor.work_to_home_car
+          - sensor.work_to_home_bus
+
+
+
+
+      - type: map
+        aspect_ratio: 100%
+        entities:
+         - entity: device_tracker.iphone_
+         - entity: device_tracker.iphone_pavel
+         - zone.home
+
+
+  
+  - title: Everything Else
+    cards:
+      - type: entities
+        title: All Automations
+        view: yes
+        show_header_toggle: true
+        entities:
+          - automation.acslid
+          - automation.all_arrive_in_sosnovka
+          - automation.all_leave_home
+          - automation.cond_18
+          - automation.cond_19
+          - automation.cond_20
+          - automation.cond_21
+          - automation.cond_22
+          - automation.cond_23
+          - automation.cond_24
+          - automation.cond_25
+          - automation.cooloff
+          - automation.coolon
+          - automation.disable_doorbell_432432
+          - automation.disable_doorbell_autoon
+          - automation.doorbell_off
+          - automation.doorbell_on
+          - automation.exit_button_vacuum_on
+          - automation.pavel_at_railway_station
+          - automation.pavel_leave_work
+          - automation.system__new_device_connected
+          - automation.telegram_test_at_1000
+          - automation.testtts
+          - automation.theroff
+          - automation.theron
+          - automation.vacuum_off
+          - automation.vacuum_on
+          - automation.xswitch_computer_click
+          - automation.xswitch_computer_double_click
+          - automation.xswitch_computer_long_press
+
+      - type: entities
+        title: All binary_sensors
+        entities:
+          - binary_sensor.cube_158d000101aaff
+          - binary_sensor.door_window_sensor_158d0001840154
+          - binary_sensor.motion_sensor_158d000113c470
+          - binary_sensor.motion_sensor_158d000158281b
+          - binary_sensor.motion_sensor_158d00015da341
+          - binary_sensor.switch_158d000113cc10
+          - binary_sensor.switch_158d0001560e5a
+          - binary_sensor.switch_158d000186eb37
+          - binary_sensor.switch_158d0001a6676b
+          - binary_sensor.wall_switch_158d00010b49bc
+          - binary_sensor.wall_switch_158d00010b5c7f
+          - binary_sensor.water_leak_sensor_158d0001d72deb
+          - binary_sensor.water_leak_sensor_158d0001d78dda
+
+      - type: entities
+        title: All trackers
+        entities:
+          - device_tracker.iphone_
+          - device_tracker.iphone_bt
+          - device_tracker.iphone_pavel
+          - device_tracker.iphone_pavel_bt
+
+      - type: entities
+        title: All fans
+        entities:
+          - fan.xiaomi_miio_device
+
+      - type: entities
+        title: All groups
+        entities:
+          - group.ac
+          - group.all_automations
+          - group.all_devices
+          - group.all_fans
+          - group.all_lights
+          - group.all_remotes
+          - group.all_switches
+          - group.all_vacuum_cleaners
+          - group.app_trackers
+          - group.bt_trackers
+
+      - type: entities
+        title: All input_boolean
+        entities:
+          - input_boolean.disable_doorbell
+          - input_boolean.thermobool
+          - input_number.sliderac
+
+      - type: entities
+        title: All lights
+        entities:
+          - light.gateway_light_f0b429cc3ea7
+          - light.yeebedroom
+          - light.yeebigroom
+          - light.yeelight_ceiling_286c07b353f0
+          - light.yeelight_ceiling_34ce008c2692
+
+      - type: entities
+        title: All media
+        entities:
+          - media_player.apple_tv_2
+          - media_player.google_home
+
+      - type: entities
+        title: All remotes
+        entities:
+          - remote.apple_tv_2
+          - remote.xiaomi_miio_192_168_1_57
+
+      - type: entities
+        title: All sensors
+        entities:
+          - sensor.humidity_158d000129ab32
+          - sensor.humidity_158d0001573ea5
+          - sensor.humidity_158d000159f070
+          - sensor.humidity_158d00015aea48
+          - sensor.humidity_158d00022cc1c4
+          - sensor.illumination_f0b429cc3ea7
+          - sensor.iphone__battery_level
+          - sensor.iphone__battery_state
+          - sensor.iphone_pavel_battery_level
+          - sensor.iphone_pavel_battery_state
+          - sensor.pressure_158d00022cc1c4
+          - sensor.temperature_158d000129ab32
+          - sensor.temperature_158d0001573ea5
+          - sensor.temperature_158d000159f070
+          - sensor.temperature_158d00015aea48
+          - sensor.temperature_158d00022cc1c4
+          - sensor.yr_symbol
+          - sun.sun
+          - sensor.yweather_condition
+          - sensor.yweather_current
+          - sensor.yweather_humidity
+          - sensor.yweather_pressure
+          - sensor.yweather_temperature
+          - sensor.yweather_temperature_max
+          - sensor.yweather_temperature_min
+          - sensor.yweather_visibility
+          - sensor.yweather_wind_speed
+          - sensor.dark_sky_apparent_temperature
+          - sensor.dark_sky_cloud_coverage
+          - sensor.dark_sky_daily_max_precip_intensity
+          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_daytime_high_apparent_temperature
+          - sensor.dark_sky_daytime_high_temperature
+          - sensor.dark_sky_dew_point
+          - sensor.dark_sky_hourly_summary
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_icon
+          - sensor.dark_sky_minutely_summary
+          - sensor.dark_sky_nearest_storm_bearing
+          - sensor.dark_sky_nearest_storm_distance
+          - sensor.dark_sky_overnight_low_apparent_temperature
+          - sensor.dark_sky_overnight_low_temperature
+          - sensor.dark_sky_ozone
+          - sensor.dark_sky_precip
+          - sensor.dark_sky_precip_intensity
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_pressure
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_uv_index
+          - sensor.dark_sky_visibility
+          - sensor.dark_sky_wind_bearing
+          - sensor.dark_sky_wind_speed
+
+
+      - type: entities
+        title: All switches
+        entities:
+          - switch.original_xiaomi_mi_smart_wifi_socket
+          - switch.wall_switch_158d00014ddc4f
+          - switch.wall_switch_left_158d00012bad35
+          - switch.wall_switch_right_158d00012bad35
+
+      - type: entities
+        title: All vacuums
+        entities:
+          - vacuum.xiaomi_vacuum_cleaner
+
+
+
+
+
+

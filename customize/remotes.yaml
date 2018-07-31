@@ -1,0 +1,4 @@
+remote.apple_tv:
+  hidden: true
+remote.xiaomi_miio_192_168_1_57:
+  friendly_name: xiaomi_remote

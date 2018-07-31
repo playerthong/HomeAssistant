@@ -1,0 +1,4 @@
+vacuum.xiaomi_vacuum_cleaner:
+  friendly_name: Пылесос
+  homebridge_visible: true     
+  homebridge_name: Пылесос

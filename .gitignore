@@ -1,0 +1,11 @@
+*
+!*.yaml
+!scenes
+!customize
+!devices
+!groups
+!scripts
+!automation
+!.gitignore
+secrets.yaml
+known_devices.yaml

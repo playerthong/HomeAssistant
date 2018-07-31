@@ -1,0 +1,8 @@
+
+thermobool:
+  name: Кондиционер
+  initial: off
+  icon: mdi:air-conditioner
+
+disable_doorbell:
+  initial: off

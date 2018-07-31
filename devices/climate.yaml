@@ -1,0 +1,12 @@
+- platform: generic_thermostat
+  hidden: true
+  name: Thermo
+  heater: switch.accool
+  target_sensor: sensor.temperature
+  ac_mode: True
+  cold_tolerance: 0
+  hot_tolerance: 2
+  min_temp: 18
+  max_temp: 25
+  target_temp: 21
+  initial_operation_mode: "off"

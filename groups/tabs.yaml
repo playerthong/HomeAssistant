@@ -1,0 +1,8 @@
+settings:
+  name: Settings
+  view: yes
+  icon: mdi:settings
+  entities:
+    # - group.hass_details
+    # - group.network_details
+    - group.all_automations

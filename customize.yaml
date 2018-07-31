@@ -1,0 +1,7 @@
+input_boolean.thermobool:
+  friendly_name: Кондиционер
+  homebridge_name: Кондиционер
+binary_sensor.switch_158d0001a6676b:
+  friendly_name: Звонок
+input_boolean.disable_doorbell:
+  friendly_name: Отключить звонок

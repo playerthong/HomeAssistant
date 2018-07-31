@@ -1,0 +1,163 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_lat
+  longitude: !secret home_lng
+  elevation: 143
+  unit_system: metric
+  time_zone: Europe/Moscow
+  customize: !include_dir_merge_named customize
+  customize_glob: !include customglob.yaml
+
+zone:
+  - name: Home
+    latitude: !secret home_lat
+    longitude: !secret home_lng
+    radius: 100
+    icon: mdi:home
+
+  - name: Work
+    latitude: !secret work_lat
+    longitude: !secret work_lng
+    radius: 200
+    icon: mdi:work
+
+  - name: Railway
+    latitude: !secret rail_lat
+    longitude: !secret rail_lng
+    radius: 300
+    icon: mdi:train
+
+  - name: Sosnovka
+    latitude: !secret sosnovka_lat
+    longitude: !secret sosnovka_lng
+    radius: 10000
+    icon: mdi:home-heart
+
+introduction:
+
+frontend:
+config:
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  base_url: !secret base_url
+
+updater:
+discovery:
+conversation:
+history:
+logbook:
+map:
+sun:
+cloud:
+  google_actions:
+    entity_config:
+      input_boolean.thermobool:
+        name: Custom Name for Google Assistant AC
+        aliases:
+         - Conditioner
+      switch.wall_switch_left_158d00012bad35:
+        name: Custom Name for Google Assistant kitchen
+        aliases:
+         - kitchen light
+
+google_assistant:
+  project_id: !secret gass_id
+  client_id: !secret gass_client
+  access_token: !secret gass_token
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.1.54:
+        name: YeeBedRoom
+      192.168.1.55:
+        name: YeeBigRoom
+
+influxdb:
+  host: !secret influxdb_host
+  port: !secret influxdb_port
+  database: !secret influxdb_database
+  username: !secret influxdb_user
+  password: !secret influxdb_password
+
+xiaomi_aqara:
+  gateways:
+   - mac: !secret xiaomi_mac
+     key: !secret xiaomi_key
+
+homekit:
+
+mqtt:
+  broker: localhost
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+mqtt_eventstream:
+  publish_topic: home-assistant/events
+  subscribe_topic: slave/rpi
+
+fan:
+  - platform: xiaomi_miio
+    host: 192.168.1.53
+    token: !secret xiaomi_fan_token
+
+remote:
+  - platform: xiaomi_miio
+    host: 192.168.1.56
+    token: !secret xiaomi_ir_token
+
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.52
+    token: !secret xiaomi_vacuum_token
+
+switch:
+  - platform: xiaomi_miio
+    name: Original Xiaomi Mi Smart WiFi Socket
+    host: 192.168.1.67
+    token: !secret xiaomi_socket_token
+    model: zimi.powerstrip.v2
+
+tts:
+  - platform: google
+    language: 'ru'
+
+device_tracker:
+  - platform: bluetooth_tracker
+    new_device_defaults:
+      track_new_devices: False
+      
+logger:
+  default: warning
+
+ios:
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api_key
+    proxy_url: !secret telegram_bot_proxy_url
+    proxy_params:
+     username: !secret telegram_bot_proxy_username
+     password: !secret telegram_bot_proxy_password
+    allowed_chat_ids:
+      - !secret telegram_bot_allowed_chat_id1
+      - !secret telegram_bot_allowed_chat_id2
+
+group: !include_dir_merge_named groups/
+automation: !include_dir_merge_list automation/
+script: !include_dir_merge_list scripts/
+notify: !include notify.yaml
+
+sensor: !include sensors.yaml
+
+input_boolean: !include devices/input_boolean.yaml
+input_number: !include devices/input_number.yaml
+
+climate: !include devices/climate.yaml
+
+dialogflow:
+
+

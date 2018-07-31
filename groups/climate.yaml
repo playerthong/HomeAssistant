@@ -1,0 +1,8 @@
+ac:
+  name: AC
+  view: no
+  entities:
+  - input_boolean.thermobool
+  - climate.thermo
+  - input_number.sliderac
+

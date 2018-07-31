@@ -1,0 +1,4 @@
+us: device_tracker.iphone_pavel,device_tracker.iphone_pavel_BT, device_tracker.iphone_, device_tracker.iphone_BT
+
+BT_Trackers: device_tracker.iphone_pavel_BT, device_tracker.iphone_BT
+APP_Trackers: device_tracker.iphone_pavel, device_tracker.iphone_
