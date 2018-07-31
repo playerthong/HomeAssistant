@@ -218,19 +218,19 @@
       message: 'Кажется, дождик начался...'
 
 
-- alias: 'Update config if travis build is successfull'
-  trigger:
-    platform: state
-    entity_id: sensor.gurskiyhomeassistant_last_build_state
-    to: 'passed'
-  action:
-    # - service: script.get_latest_config
-    - service: notify.telegram
-      data:
-       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
-    - service: shell_command.git_pull
-    - service: homeassistant.restart
-    # - service: shell_command.restart_homeassistant
+# - alias: 'Update config if travis build is successfull'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.gurskiyhomeassistant_last_build_state
+#     to: 'passed'
+#   action:
+#     # - service: script.get_latest_config
+#     - service: notify.telegram
+#       data:
+#        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
+#     - service: shell_command.git_pull
+#     - service: homeassistant.restart
+#     # - service: shell_command.restart_homeassistant
 
 
 - alias: "Startup Notification"
@@ -241,3 +241,11 @@
     - service: notify.telegram
       data:
        message: 'Home assistant перезагрузился'
+
+- alias: 'Update config if travis build is successfull'
+  trigger:
+    platform: state
+    entity_id: sensor.gurskiyhomeassistant_last_build_state
+    to: 'passed'
+  action:
+    - service: script.restart_hass
