@@ -30,16 +30,27 @@ turn_off_all_lights:
      - service: switch.turn_off
        entity_id: switch.wall_switch_right_158d00012bad35
 
-restart_hass:
-  alias: Restart Home Assistant
-  sequence:
-    - service: shell_command.restart_homeassistant
+# restart_hass:
+#   alias: Restart Home Assistant
+#   sequence:
+#     - service: shell_command.restart_homeassistant
 
 get_latest_config:
   alias: 'Update config'
   sequence:
     - service: shell_command.git_pull
     - service: shell_command.restart_homeassistant
+
+restart_hass:
+  alias: Restart Home Assistant
+  sequence:
+    - service: notify.telegram
+      data:
+       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
+    - service: shell_command.git_pull
+    - service: homeassistant.restart
+
+
   
 
 
