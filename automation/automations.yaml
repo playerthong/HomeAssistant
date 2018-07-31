@@ -233,14 +233,14 @@
 #     # - service: shell_command.restart_homeassistant
 
 
-- alias: "Startup Notification"
-  trigger:
-    platform: event
-    event_type: homeassistant_start
-  action:
-    - service: notify.telegram
-      data:
-       message: 'Home assistant перезагрузился'
+# - alias: "Startup Notification"
+#   trigger:
+#     platform: event
+#     event_type: homeassistant_start
+#   action:
+#     - service: notify.telegram
+#       data:
+#        message: 'Home assistant перезагрузился'
 
 - alias: 'Update config if travis build is successfull'
   trigger:
@@ -249,3 +249,12 @@
     to: 'passed'
   action:
     - service: script.restart_hass
+
+- alias: "Startup Notification"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Home assistant перезагрузился'
