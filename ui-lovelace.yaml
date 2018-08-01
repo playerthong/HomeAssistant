@@ -158,6 +158,8 @@ views:
           - automation.notify_alarm_triggered
           - automation.set_alarm_status_drop_down
           - automation.front_door_alarm
+          - automation.disable_guestMode_autoOn
+          - automation.disable_guestMode
           - automation.theroff
           - automation.theron
           - automation.vacuum_off
