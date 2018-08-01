@@ -146,6 +146,7 @@ views:
       - type: picture-entity
         entity: camera.grafana_cpu2
         show_info: false
+        
       # - type: picture-entity
       #   entity: camera.grafana_memory
       #   show_info: false
