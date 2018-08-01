@@ -93,7 +93,7 @@ homekit:
 mqtt:
   broker: localhost
   username: !secret mqtt_username
-  password: !secret mqtt_password
+  password: !secret mqtt_password666666666666666666666666666666
 
 mqtt_eventstream:
   publish_topic: home-assistant/events
