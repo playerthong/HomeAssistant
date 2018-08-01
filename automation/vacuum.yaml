@@ -17,3 +17,67 @@
      - service: notify.telegram
        data:
         message: 'Георгий завершил уборку'
+
+
+- id: vacuum_cleaner_error
+  alias: Vacuum Cleaner Error
+  trigger:
+    - platform: state
+      entity_id: sensor.vacuum_cleaner_status_sensor
+      to: 'Error'
+    - platform: state
+      entity_id: sensor.vacuum_cleaner_status_sensor
+      to: 'In Error'
+    - platform: state
+      entity_id: sensor.vacuum_cleaner_status_sensor
+      to: 'Charging Error'
+  action:
+    - service: notify.telegram
+      data:
+        message: >-
+          {% if is_state('sensor.vacuum_cleaner_error_sensor', 'No Error')  %}
+            {{states.sensor.vacuum_cleaner_status_sensor.state}}
+          {% else %}
+            {{states.sensor.vacuum_cleaner_error_sensor.state}}
+          {% endif %}
+
+- id: vacuum_cleaner_error_solved
+  alias: Vacuum Cleaner Error Solved
+  trigger:
+    - platform: state
+      entity_id: sensor.vacuum_cleaner_error_sensor
+      to: 'No Error'
+  action:
+    - service: notify.telegram
+      data:
+        message: Георгий вне опасности
+
+#- id: vacuum_cleaner_started
+#  alias: Vacuum Cleaner Started
+#  trigger:
+#    - platform: state
+#      entity_id: vacuum.xiaomi_vacuum_cleaner
+#      from: 'off'
+#      to: 'on'
+#  action:
+#    - service: notify.home_alerts
+#      data:
+#        title: '*Vacuum cleaner*'
+#        message: >-
+#          {{states.sensor.vacuum_cleaner_status_sensor.state}}
+#
+#- id: vacuum_done_cleaning
+#  alias: Vacuum done cleaning
+#  trigger:
+#    - platform: state
+#      entity_id: vacuum.xiaomi_vacuum_cleaner
+#      from: 'on'
+#      to: 'off'
+#  action:
+#    - service: notify.home_alerts
+#      data:
+#        title: '*Vacuum cleaner*'
+#        message: >-
+#          {{states.sensor.vacuum_cleaner_status_sensor.state}}
+
+

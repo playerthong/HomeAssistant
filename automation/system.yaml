@@ -7,6 +7,16 @@
       data:
        message: 'Home assistant перезагрузился'
 
+- alias: 'Travis failed'
+  trigger:
+    platform: state
+    entity_id: sensor.gurskiyhomeassistant_last_build_state
+    to: 'failed'
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Travis не смог собрать проект'
+
 - alias: 'Update config if travis build is successfull'
   trigger:
     platform: state

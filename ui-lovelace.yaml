@@ -153,6 +153,8 @@ views:
           - automation.theron
           - automation.vacuum_off
           - automation.vacuum_on
+          - automation.vacuum_cleaner_error
+          - vacuum_cleaner_error_solved
           - automation.xswitch_computer_click
           - automation.xswitch_computer_double_click
           - automation.xswitch_computer_long_press
@@ -243,6 +245,8 @@ views:
         title: All sensors
         entities:
           - sensor.gurskiyhomeassistant_last_build_state
+          - sensor.vacuum_cleaner_error_sensor
+          - sensor.vacuum_cleaner_status_sensor
           - sensor.humidity_158d000129ab32
           - sensor.humidity_158d0001573ea5
           - sensor.humidity_158d000159f070
