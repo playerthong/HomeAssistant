@@ -140,7 +140,7 @@ views:
       - type: entities
         title: Grafana
         entities:
-          - camera.Grafana_1
+          - camera.grafana_1
 
   - icon: mdi:palette-swatch
     title: Сущности
