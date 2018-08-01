@@ -237,7 +237,7 @@
       data:
        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
     - service: shell_command.git_pull
-    - delay: 0:35
+    - delay: 0:01
     - service: homeassistant.restart
 
 - alias: "Startup Notification"
