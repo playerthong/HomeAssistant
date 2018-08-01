@@ -1,11 +1,11 @@
 - alias: water leak kitchen 
   trigger:
-  - platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
-    to: 'off'
+     - platform: state
+       entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
+       to: 'on'
+     - platform: state
+       entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
+       to: 'off'
   action:
      - service: notify.telegram
        data:
@@ -29,12 +29,12 @@
 
 - alias: water leak bathroom 
   trigger:
-  - platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
-    to: 'off'
+     - platform: state
+       entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
+       to: 'on'
+     - platform: state
+       entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
+       to: 'off'
   action:
      - service: notify.telegram
        data:

@@ -1,11 +1,11 @@
 - alias: Front Door 
   trigger:
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d0001840154
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d0001840154
-    to: 'off'
+     - platform: state
+       entity_id: binary_sensor.door_window_sensor_158d0001840154
+       to: 'on'
+     - platform: state
+       entity_id: binary_sensor.door_window_sensor_158d0001840154
+       to: 'off'
   action:
      - service: notify.telegram
        data:
