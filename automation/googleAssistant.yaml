@@ -21,3 +21,24 @@
     data:
       entity_id: media_player.google_home
       volume_level: 0.75
+
+#- alias: Keep Google Home Alive
+#  trigger:
+#    platform: time
+#    minutes: '/2'
+#    seconds: 00
+#  condition:
+#    condition: or
+#    conditions:
+#      - condition: state
+#        entity_id: media_player.google_home_minis
+#        state: 'off'
+#      - condition: state
+#        entity_id: media_player.google_home_minis
+#        state: 'idle'
+#  action:
+#    service: media_player.play_media
+#    entity_id: media_player.google_home_minis
+#    data:
+#      media_content_id: http://192.168.0.24/audio1sec.mp3
+#      media_content_type: music

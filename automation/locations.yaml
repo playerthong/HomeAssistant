@@ -24,7 +24,9 @@
   action:
      - service: notify.telegram
        data:
-        message: 'Павлик ушел с работы.'
+        #message: 'Павлик ушел с работы.'
+        message: 'Павлик ушел с работы. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}'
+        
 
 
 - alias: 'All arrive in sosnovka'
