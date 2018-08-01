@@ -321,7 +321,7 @@ views:
           - sensor.dark_sky_wind_bearing
           - sensor.dark_sky_wind_speed
 
-- type: entities
+      - type: entities
         title: Vacuum cleaner
         entities:
           - sensor.vacuum_cleaner_error_sensor
