@@ -142,14 +142,14 @@ views:
       - type: picture-entity
         entity: camera.grafana_1
       - type: image
-            entity: camera.grafana_1
-            camera_image: camera.grafana_1
-            style:
-              top: 5%
-              left: 10%
-              width: 10%
-              border: 2px solid red
-              border-radius: 10%
+        entity: camera.grafana_1
+        camera_image: camera.grafana_1
+        style:
+          top: 5%
+          left: 10%
+          width: 10%
+          border: 2px solid red
+          border-radius: 10%
 
   - icon: mdi:palette-swatch
     title: Сущности
