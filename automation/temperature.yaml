@@ -1,0 +1,39 @@
+- alias: temp alert 1
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_158d000129ab32 #гостинная
+    above: 30
+  action:
+  - service: notify.telegram
+    data:
+     message: 'Температура в гостинной перевалила за 30'
+
+- alias: temp alert 2
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_158d0001573ea5 #спальня
+    above: 30
+  action:
+  - service: notify.telegram
+    data:
+     message: 'Температура в спальне перевалила за 30'
+
+- alias: hum alert 1
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.humidity_158d000129ab32 #гостинная
+    below: 20
+  action:
+  - service: notify.telegram
+    data:
+     message: 'Влажность в гостинной опустилась ниже 20%'
+
+- alias: hum alert 2
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.humidity_158d0001573ea5 #спальня
+    below: 20
+  action:
+  - service: notify.telegram
+    data:
+     message: 'Влажность в спальне опустилась ниже 20%'

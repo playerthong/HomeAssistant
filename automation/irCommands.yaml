@@ -1,0 +1,21 @@
+- alias: turn_on_tv
+  trigger:
+    platform: state
+    entity_id: input_boolean.turn_on_tv
+    to: 'on'
+  action:
+    - service: script.toggle
+      entity_id: script.tv_on
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.turn_on_tv
+
+- alias: turn_on_tv_sound
+  trigger:
+    platform: state
+    entity_id: input_boolean.turn_on_tv_sound
+    to: 'on'
+  action:
+    - service: script.toggle
+      entity_id: script.tv_sound
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.turn_on_tv_sound

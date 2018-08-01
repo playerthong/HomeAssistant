@@ -30,14 +30,14 @@
     - delay: 0:01
     - service: homeassistant.restart
 
-- alias: telegram test at 10:00
-  trigger:
-    platform: time
-    at: '10:00:00'
-  action:
-   - service: notify.telegram
-     data:
-      message: 'Утренняя проверка работоспособности telegram '
+#- alias: telegram test at 10:00
+#  trigger:
+#    platform: time
+#    at: '10:00:00'
+#  action:
+#   - service: notify.telegram
+#     data:
+#      message: 'Утренняя проверка работоспособности telegram '
       
 # - alias: System - New device connected
 #   trigger:

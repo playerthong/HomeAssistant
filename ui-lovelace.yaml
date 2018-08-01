@@ -33,6 +33,8 @@ views:
           #- media_player.apple_tv_2
           #- media_player.google_home
          # - group.ac
+          - input_boolean.turn_on_tv
+          - input_boolean.turn_on_tv_sound
           - sensor.pc_power
           - input_boolean.thermobool
           - input_number.sliderac
@@ -148,6 +150,7 @@ views:
           - automation.startup_notification
           - automation.update_config_if_travis_build_is_successfull
           - automation.rainy_day
+          - automation.morning_rule
           - automation.acslid
           - automation.air_aqi_to_high
           - automation.all_arrive_in_sosnovka
@@ -193,7 +196,12 @@ views:
           - automation.cond_25
           - automation.cooloff
           - automation.coolon
-
+          - automation.temp_alert_1
+          - automation.temp_alert_2
+          - automation.hum_alert_1
+          - automation.hum_alert_2
+          - automation.turn_on_tv
+          - automation.turn_on_tv_sound
       - type: entities
         title: All binary_sensors
         entities:
@@ -246,6 +254,8 @@ views:
           - input_boolean.guest_mode
           - input_boolean.vacation_mode
           - input_number.sliderac
+          - input_boolean.turn_on_tv
+          - input_boolean.turn_on_tv_sound
 
       - type: entities
         title: All lights

@@ -15,3 +15,11 @@ guest_mode:
 vacation_mode:
   name: Режим отпуска
   icon: mdi:airplane
+
+turn_on_tv:
+  name: Вкл телевизор
+  icon: mdi:television
+
+turn_on_tv_sound:
+  name: Вкл колонки
+  icon: mdi:speaker-wireless
