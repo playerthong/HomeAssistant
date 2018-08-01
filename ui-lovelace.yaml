@@ -287,7 +287,7 @@ views:
           - sensor.dark_sky_wind_speed
 
       - type: entities
-        title: Vacuum cleaner
+        title: Пылесосы
         entities:
           - sensor.vacuum_cleaner_error_sensor
           - sensor.vacuum_cleaner_status_sensor
