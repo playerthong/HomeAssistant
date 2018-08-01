@@ -38,3 +38,10 @@
      - service: notify.telegram
        data:
         message: 'Хорошо отдохнуть!'
+
+
+  #condition:
+  #  - condition: template
+  #    value_template: '{{ states.device_tracker.1.state != "home"}}'
+  #  - condition: template
+  #    value_template: '{{ states.device_tracker.2.state != "home"}}'
