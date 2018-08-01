@@ -1,0 +1,38 @@
+
+- alias: 'All leave home'
+  trigger:
+    platform: state
+    entity_id: group.bt_trackers
+    to: 'not_home'
+  action:
+     - service: notify.telegram
+       data:
+        message: 'Все ушли из дома. Выключаем свет.'
+     - service: script.turn_on
+       entity_id: script.turn_off_all_lights
+
+- alias: Pavel leave work
+  trigger:
+    - platform: state
+      entity_id: device_tracker.iphone_pavel
+      from: 'Work'
+      to: 'not_home'
+  condition:
+    - condition: time
+      after: '16:30'
+      before: '22:00'
+  action:
+     - service: notify.telegram
+       data:
+        message: 'Павлик ушел с работы.'
+
+
+- alias: 'All arrive in sosnovka'
+  trigger:
+    platform: state
+    entity_id: group.app_trackers
+    to: 'Sosnovka'
+  action:
+     - service: notify.telegram
+       data:
+        message: 'Хорошо отдохнуть!'

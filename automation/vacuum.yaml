@@ -1,0 +1,19 @@
+- alias: 'Vacuum ON'
+  trigger:
+    platform: state
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    to: 'on'
+  action:
+     - service: notify.telegram
+       data:
+        message: 'Георгий начал уборку'
+
+- alias: 'Vacuum OFF'
+  trigger:
+    platform: state
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    to: 'off'
+  action:
+     - service: notify.telegram
+       data:
+        message: 'Георгий завершил уборку'

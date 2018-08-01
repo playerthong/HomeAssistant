@@ -1,0 +1,48 @@
+
+- alias: XSwitch computer click
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001560e5a
+      click_type: single
+  action:
+    - service: light.toggle
+      entity_id: light.YeeBigRoom
+
+- alias: XSwitch computer double click
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001560e5a
+      click_type: double
+  action:
+    - service: input_boolean.toggle
+      data:
+        entity_id: input_boolean.thermobool
+
+
+- alias: XSwitch computer long press
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001560e5a
+      click_type: long_click_press
+  action:
+    - service: light.toggle
+      entity_id: light.YeeBigRoom
+
+
+#КНОПКА У ВЫХОДА#
+- alias: Exit button Vacuum on
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d000113cc10
+      click_type: single
+  action:
+    - service: vacuum.toggle
+      entity_id: vacuum.xiaomi_vacuum_cleaner

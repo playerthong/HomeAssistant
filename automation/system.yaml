@@ -1,3 +1,34 @@
+- alias: "Startup Notification"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Home assistant перезагрузился'
+
+- alias: 'Update config if travis build is successfull'
+  trigger:
+    platform: state
+    entity_id: sensor.gurskiyhomeassistant_last_build_state
+    to: 'passed'
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
+    - service: shell_command.git_pull
+    - delay: 0:01
+    - service: homeassistant.restart
+
+- alias: telegram test at 10:00
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+   - service: notify.telegram
+     data:
+      message: 'Утренняя проверка работоспособности telegram '
+      
 # - alias: System - New device connected
 #   trigger:
 #     - platform: event

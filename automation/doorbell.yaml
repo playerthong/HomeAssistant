@@ -1,0 +1,69 @@
+- alias: DoorBell ON
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a6676b
+      click_type: single
+  condition:
+    - condition: state
+      entity_id: input_boolean.disable_doorbell
+      state: 'off'
+  action:
+     - service: xiaomi_aqara.play_ringtone
+       data:
+        gw_mac: F0:B4:29:CC:3E:A7
+        ringtone_id: 10
+        ringtone_vol: 80
+     - service: tts.google_say
+       entity_id: media_player.google_home
+       data:
+        message: 'Звонят в дверь'
+     - service: notify.telegram
+       data:
+        message: 'Кто-то звонит в дверь'
+
+- alias: DoorBell OFF
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a6676b
+      click_type: single
+  condition:
+    - condition: state
+      entity_id: input_boolean.disable_doorbell
+      state: 'on'
+  action:
+     - service: xiaomi_aqara.play_ringtone
+       data:
+        gw_mac: F0:B4:29:CC:3E:A7
+        ringtone_id: 10
+        ringtone_vol: 4
+     - service: notify.telegram
+       data:
+        message: 'Кто-то звонит в дверь'
+
+- alias: disable_doorbell_autoOn
+  trigger:
+      platform: state
+      entity_id: input_boolean.disable_doorbell
+      to: 'on'
+  action:
+      - service: notify.telegram
+        data:
+         message: 'Дверной звонок перевед в тихий режим'
+      - delay:
+          minutes: 180
+      - service: homeassistant.turn_off
+        entity_id: input_boolean.disable_doorbell
+
+- alias: disable_doorbell_432432
+  trigger:
+      platform: state
+      entity_id: input_boolean.disable_doorbell
+      to: 'off'
+  action:
+      - service: notify.telegram
+        data:
+         message: 'Дверной звонок вернулся в обычный режим'
