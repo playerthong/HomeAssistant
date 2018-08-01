@@ -154,7 +154,8 @@ sensor: !include_dir_merge_list sensors/
 climate: !include devices/climate.yaml
 input_boolean: !include devices/input_boolean.yaml
 input_number: !include devices/input_number.yaml
-shell_command: !include_dir_merge_list shell/
+#shell_command: !include_dir_merge_list shell/
+shell_command: !include shell/shell_commands.yaml
 dialogflow:
 
 
