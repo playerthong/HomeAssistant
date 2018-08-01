@@ -1,0 +1,13 @@
+- alias: Air aqi to high
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.air_purifier_aqi
+    above: 100
+  condition:
+    condition: state
+    entity_id: fan.xiaomi_miio_device
+    state: 'on'
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Плохое качество воздуха!'

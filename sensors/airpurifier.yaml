@@ -1,0 +1,22 @@
+- platform: template
+   sensors:
+     air_purifier_temp:
+       value_template: "{{ states.fan.xiaomi_miio_device.attributes.temperature }}"
+       friendly_name: Температура (Очиститель)
+       unit_of_measurement: "C"
+       device_class: temperature
+       
+ - platform: template
+   sensors:
+     air_purifier_humidity:
+       value_template: "{{ states.fan.xiaomi_miio_device.attributes.humidity }}"
+       friendly_name: Влажность (Очиститель)
+       unit_of_measurement: "%"
+       device_class: humidity
+       
+ - platform: template
+   sensors:
+     air_purifier_aqi:
+       value_template: "{{ states.fan.xiaomi_miio_device.attributes.aqi }}"
+       friendly_name: Качество воздуха
+       unit_of_measurement: AQI

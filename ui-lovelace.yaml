@@ -34,6 +34,7 @@ views:
         entities:
           - sensor.temperature_158d0001573ea5
           - sensor.humidity_158d0001573ea5
+          - sensor.air_purifier_aqi
           - light.yeebedroom
           - vacuum.xiaomi_vacuum_cleaner
           - fan.xiaomi_miio_device
@@ -137,6 +138,7 @@ views:
           - automation.update_config_if_travis_build_is_successfull
           - automation.rainy_day
           - automation.acslid
+          - automation.air_aqi_to_high
           - automation.all_arrive_in_sosnovka
           - automation.all_leave_home
           - automation.disable_doorbell_432432
@@ -247,6 +249,9 @@ views:
           - sensor.gurskiyhomeassistant_last_build_state
           - sensor.vacuum_cleaner_error_sensor
           - sensor.vacuum_cleaner_status_sensor
+          - sensor.air_purifier_temp
+          - sensor.air_purifier_humidity
+          - sensor.air_purifier_aqi
           - sensor.humidity_158d000129ab32
           - sensor.humidity_158d0001573ea5
           - sensor.humidity_158d000159f070
