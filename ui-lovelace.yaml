@@ -138,10 +138,9 @@ views:
     background: radial-gradient(crimson, skyblue)
     cards:
       - type: entities
-        title: Все бинарные сенсоры
+        title: Grafana
         entities:
-          - camera.grafana_power
-          - sensor.grafana_power
+          - camera.Grafana_1
 
   - icon: mdi:palette-swatch
     title: Сущности
