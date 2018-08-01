@@ -141,16 +141,32 @@ views:
       # - type: image
       #       entity: camera.grafana_1
       - type: picture-entity
-        entity: camera.grafana_1
-      - type: picture
-        entity: camera.grafana_1
-        camera_image: camera.grafana_1
-        style:
-          top: 5%
-          left: 10%
-          width: 10%
-          border: 2px solid red
-          border-radius: 10%
+        entity: camera.grafana_cpu
+      - type: picture-entity
+        entity: camera.grafana_cpu2
+      - type: picture-entity
+        entity: camera.grafana_memory
+      - type: picture-entity
+        entity: camera.grafana_memory2
+      - type: picture-entity
+        entity: camera.grafana_power
+      - type: picture-entity
+        entity: camera.grafana_air
+      - type: picture-entity
+        entity: camera.grafana_temp
+      - type: picture-entity
+        entity: camera.grafana_hum
+      - type: picture-entity
+        entity: camera.grafana_power2
+      #- type: picture
+      #  entity: camera.grafana_1
+      #  camera_image: camera.grafana_1
+      #  style:
+      #    top: 5%
+      #    left: 10%
+      #    width: 10%
+      #    border: 2px solid red
+      #    border-radius: 10%
 
   - icon: mdi:palette-swatch
     title: Сущности

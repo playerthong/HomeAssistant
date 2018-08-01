@@ -137,8 +137,48 @@ ios:
 
 camera:
   - platform: generic
-    name: Grafana_1
+    name: Grafana_cpu
+    still_image_url: 'http://localhost:3000/render/d-solo/8Kfm-RRRz/system?orgId=1&panelId=2&from=1533146418898&to=1533150018898&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_cpu2
+    still_image_url: 'http://localhost:3000/render/d-solo/8Kfm-RRRz/system?orgId=1&panelId=8&from=1533146538000&to=1533150138000&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_memory
+    still_image_url: 'http://localhost:3000/render/d-solo/8Kfm-RRRz/system?orgId=1&panelId=4&from=1533146498028&to=1533150098028&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_memory2
+    still_image_url: 'http://localhost:3000/render/d-solo/8Kfm-RRRz/system?orgId=1&panelId=9&from=1533146576979&to=1533150176979&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_power
     still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=20&from=1533130428826&to=1533132228827&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_power2
+    still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=22&from=1533128842379&to=1533150442380&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_air
+    still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=24&from=1533128686684&to=1533150286684&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_temp
+    still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=2&from=1533128739975&to=1533150339975&width=1000&height=500&tz=UTC%2B03%3A00'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+  - platform: generic
+    name: Grafana_hum
+    still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=18&from=1533128795865&to=1533150395865&width=1000&height=500&tz=UTC%2B03%3A00'
     username: !secret grafana_user
     password: !secret grafana_pass
 
