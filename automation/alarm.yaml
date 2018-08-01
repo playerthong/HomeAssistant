@@ -1,0 +1,101 @@
+- alias: Arm Alarm When Nobody Home
+  trigger:
+  - entity_id: group.tracked_users
+    platform: state
+    entity_id: group.bt_trackers
+    to: 'not_home'
+    for:
+      minutes: 3
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home
+      state: 'disarmed'
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+  action:
+  - service: alarm_control_panel.alarm_arm_away
+    data:
+      entity_id: alarm_control_panel.home
+  - service: notify.chrome
+    data:
+     - service: notify.telegram
+       data:
+        message: 'Сигнализация включена'
+
+
+- alias: Disarm alarm when someone comes home
+  trigger:
+    platform: state
+    entity_id: group.bt_trackers
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.home
+    state: 'armed_away'
+  action:
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.home
+  - service: notify.telegram
+    data:
+     message: 'Сигнализация выключена'
+
+
+- alias: Notify alarm triggered
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.home
+    to: 'triggered'
+  action:
+  - service: notify.telegram
+    data:
+     message: 'Сработала сигнализация'
+  - service: tts.google_say
+    entity_id: media_player.google_home
+    data:
+     message: 'Сработала сигнализация!'
+
+- alias: Set alarm status drop down
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home
+    to: 'disarmed'
+  - platform: state
+    entity_id: alarm_control_panel.home
+    to: 'armed_away'
+  - platform: state
+    entity_id: alarm_control_panel.home
+    to: 'armed_night'
+  action:
+  - service: input_select.select_option
+    entity_id: input_select.alarm_status
+    data_template:
+      option: >
+        {% if is_state("alarm_control_panel.home", "disarmed") %}
+          Disarmed
+        {% elif is_state("alarm_control_panel.home", "armed_away") %}
+          Armed Away
+        {% elif is_state("alarm_control_panel.home", "armed_night") %}
+          Armed Night
+        {% else %}
+        {% endif %}
+
+
+- alias: 'Front door alarm'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001840154
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home
+      state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home

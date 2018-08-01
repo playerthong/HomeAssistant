@@ -49,6 +49,7 @@ views:
           - binary_sensor.motion_sensor_158d000158281b
           - light.gateway_light_f0b429cc3ea7
           - input_boolean.disable_doorbell
+          - input_boolean.guest_mode
 
       - type: entities
         title: Кухня
@@ -149,9 +150,14 @@ views:
           - automation.exit_button_vacuum_on
           - automation.pavel_at_railway_station
           - automation.pavel_leave_work
-          - automation.system__new_device_connected
+          - automation.system_new_device_connected
           - automation.telegram_test_at_1000
           - automation.testtts
+          - automation.arm_alarm_when_nobody_home
+          - automation.disarm_alarm_when_someone_comes_home
+          - automation.notify_alarm_triggered
+          - automation.set_alarm_status_drop_down
+          - automation.front_door_alarm
           - automation.theroff
           - automation.theron
           - automation.vacuum_off
@@ -226,6 +232,8 @@ views:
         entities:
           - input_boolean.disable_doorbell
           - input_boolean.thermobool
+          - input_boolean.guest_mode
+          - input_boolean.vacation_mode
           - input_number.sliderac
 
       - type: entities
@@ -349,6 +357,19 @@ views:
         title: All vacuums
         entities:
           - vacuum.xiaomi_vacuum_cleaner
+
+      - type: entities
+        title: Сигнализация
+        entities:
+          - input_select.alarm_status
+          - automation.arm_alarm_when_nobody_home
+          - automation.disarm_alarm_when_someone_comes_home
+          - automation.notify_alarm_triggered
+          - automation.set_alarm_status_drop_down
+          - automation.front_door_alarm
+          - input_boolean.guest_mode
+          - input_boolean.vacation_mode
+
 
 
 

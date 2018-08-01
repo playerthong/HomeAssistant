@@ -1,0 +1,6 @@
+alarm_status:
+    name: Alarm Status
+    options:
+    - Disarmed
+    - Armed Away
+    - Armed Night

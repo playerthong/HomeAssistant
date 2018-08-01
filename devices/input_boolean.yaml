@@ -6,3 +6,11 @@ thermobool:
 
 disable_doorbell:
   initial: off
+
+guest_mode:
+  name: Guest Mode
+  icon: mdi:account-multiple
+
+vacation_mode:
+  name: Vacation Mode
+  icon: mdi:airplane
