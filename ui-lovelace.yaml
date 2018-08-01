@@ -1,6 +1,7 @@
 title: Home
 views:
   - title: Home
+    background: center / cover no-repeat url("/background.png") fixed
     cards:
       # - type: entity-filter
       #   entities:
@@ -13,6 +14,8 @@ views:
       #     title: People that are home
       - type: entities
         title: Общее
+        background: radial-gradient(crimson, skyblue)
+        theme: dark-mode
         show_header_toggle: false
         entities:
           - input_select.alarm_status
@@ -141,6 +144,7 @@ views:
 
   
   - title: Everything Else
+    theme: dark-mode
     cards:
       - type: entities
         title: All Automations
