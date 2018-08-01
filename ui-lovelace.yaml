@@ -24,6 +24,7 @@ views:
           #- media_player.apple_tv_2
           #- media_player.google_home
          # - group.ac
+          - sensor.pc_power
           - input_boolean.thermobool
           - input_number.sliderac
           - switch.original_xiaomi_mi_smart_wifi_socket
@@ -258,6 +259,8 @@ views:
           - sensor.vacuum_cleaner_main_brush_left
           - sensor.vacuum_cleaner_side_brush_left
           - sensor.vacuum_cleaner_filter_left
+          - sensor.pc_power
+          - sensor.pc_power_temperature
           - sensor.air_purifier_temp
           - sensor.air_purifier_humidity
           - sensor.air_purifier_aqi

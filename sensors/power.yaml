@@ -1,0 +1,15 @@
+
+
+- platform: template
+  sensors:
+    pc_power:
+      value_template: >
+        {{ states.switch.original_xiaomi_mi_smart_wifi_socket.attributes.load_power }}
+      friendly_name: Комп потребление
+      unit_of_measurement: 'Kw'
+
+    pc_power_temperature:
+      value_template: >
+        {{ states.switch.original_xiaomi_mi_smart_wifi_socket.attributes.temperature }}
+      friendly_name: Комп питание температура
+      unit_of_measurement: 'С'
