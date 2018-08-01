@@ -12,7 +12,8 @@ views:
         theme: dark-mode
         show_header_toggle: false
         entities:
-          - input_select.alarm_status
+          #- input_select.alarm_status
+          - alarm_control_panel.home
           - input_boolean.disable_doorbell
           - input_boolean.guest_mode
           - binary_sensor.door_window_sensor_158d0001840154
@@ -133,7 +134,7 @@ views:
          - entity: device_tracker.iphone_pavel
          - zone.home
 
-  - icon: mdi:palette-swatch
+  - icon: mdi:chart-areaspline
     title: Grafana
     background: radial-gradient(crimson, skyblue)
     cards:
@@ -141,7 +142,7 @@ views:
       #       entity: camera.grafana_1
       - type: picture-entity
         entity: camera.grafana_1
-      - type: image
+      - type: picture
         entity: camera.grafana_1
         camera_image: camera.grafana_1
         style:

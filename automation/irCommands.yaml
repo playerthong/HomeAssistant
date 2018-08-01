@@ -4,8 +4,13 @@
     entity_id: input_boolean.turn_on_tv
     to: 'on'
   action:
-    - service: script.toggle
-      entity_id: script.tv_on
+    # - service: script.toggle
+    #   entity_id: script.tv_on
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VHAP0BAABLAgAAwgYAAM4IAABaEQAAeiIAAAidAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFEBAgEBAQEBAgIBAgICAgIBAQECAQEBAQICAgECAgICBgNQA='
     - service: input_boolean.turn_off
       entity_id: input_boolean.turn_on_tv
 
@@ -15,7 +20,12 @@
     entity_id: input_boolean.turn_on_tv_sound
     to: 'on'
   action:
-    - service: script.toggle
-      entity_id: script.tv_sound
+    # - service: script.toggle
+    #   entity_id: script.tv_sound
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6UlAK4BAADmAQAAUQMAAKQDAAAsCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0MBAQMBIyEBASMBAQEBASMBAA'
     - service: input_boolean.turn_off
       entity_id: input_boolean.turn_on_tv_sound
