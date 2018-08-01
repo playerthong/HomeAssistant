@@ -138,7 +138,7 @@ ios:
 camera:
   - platform: generic
     name: Grafana_1
-    still_image_url: 'localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=20&from=1533130428826&to=1533132228827&width=1000&height=500&tz=UTC%2B03%3A00'
+    still_image_url: 'http://localhost:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=20&from=1533130428826&to=1533132228827&width=1000&height=500&tz=UTC%2B03%3A00'
     username: !secret grafana_user
     password: !secret grafana_pass
 

@@ -137,12 +137,8 @@ views:
     title: Grafana
     background: radial-gradient(crimson, skyblue)
     cards:
-      - type: entities
-        title: Grafana
-        entities:
-          - camera.grafana_1
-      - type: image
-            entity: camera.grafana_1
+      # - type: image
+      #       entity: camera.grafana_1
       - type: picture-entity
             entity: camera.grafana_1
 
