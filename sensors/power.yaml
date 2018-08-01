@@ -12,4 +12,4 @@
       value_template: >
         {{ states.switch.original_xiaomi_mi_smart_wifi_socket.attributes.temperature }}
       friendly_name: Комп питание температура
-      unit_of_measurement: 'С'
+      unit_of_measurement: '°C'

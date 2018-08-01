@@ -3,7 +3,7 @@
     air_purifier_temp:
       value_template: "{{ states.fan.xiaomi_miio_device.attributes.temperature }}"
       friendly_name: Температура (Очиститель)
-      unit_of_measurement: "C"
+      unit_of_measurement: "°C"
       device_class: temperature
        
 - platform: template
