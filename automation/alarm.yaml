@@ -28,22 +28,22 @@
 #            message: 'Сигнализация включена'
 
 
-# - alias: Disarm alarm when someone comes home
-#   trigger:
-#     platform: state
-#     entity_id: group.bt_trackers
-#     to: 'home'
-#   condition:
-#     condition: state
-#     entity_id: alarm_control_panel.home
-#     state: 'armed_away'
-#   action:
-#      - service: alarm_control_panel.alarm_disarm
-#        data:
-#          entity_id: alarm_control_panel.home
-#      - service: notify.telegram
-#        data:
-#         message: 'Сигнализация выключена'
+- alias: Disarm alarm when someone comes home
+  trigger:
+    platform: state
+    entity_id: group.bt_trackers
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.home
+    state: 'armed_away'
+  action:
+     - service: alarm_control_panel.alarm_disarm
+       data:
+         entity_id: alarm_control_panel.home
+     - service: notify.telegram
+       data:
+        message: 'Сигнализация выключена'
 
 
 - alias: Notify alarm triggered
