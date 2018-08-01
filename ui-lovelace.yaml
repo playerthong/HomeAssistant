@@ -57,8 +57,8 @@ views:
           - binary_sensor.door_window_sensor_158d0001840154
           - binary_sensor.motion_sensor_158d000158281b
           - light.gateway_light_f0b429cc3ea7
-          - input_boolean.disable_doorbell
-          - input_boolean.guest_mode
+         # - input_boolean.disable_doorbell
+         # - input_boolean.guest_mode
 
       - type: entities
         title: Кухня
