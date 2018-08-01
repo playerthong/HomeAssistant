@@ -89,6 +89,38 @@ xiaomi_aqara:
      key: !secret xiaomi_key
 
 homekit:
+  filter:
+    include_entities:
+      - alarm_control_panel.home
+      - light.yeebigroom
+      - light.yeebedroom
+      - switch.wall_switch_158d00014ddc4f
+      - switch.wall_switch_left_158d00012bad35
+      - switch.wall_switch_right_158d00012bad35
+      - binary_sensor.door_window_sensor_158d0001840154
+      - input_boolean.guest_mode
+      - input_boolean.disable_doorbell
+      - sensor.temperature_158d000129ab32
+      - sensor.humidity_158d000129ab32
+      - input_boolean.turn_on_tv
+      - input_boolean.turn_on_tv_sound
+      - sensor.pc_power
+      - input_boolean.thermobool
+      - input_number.sliderac
+      - sensor.temperature_158d0001573ea5
+      - sensor.humidity_158d0001573ea5
+      - sensor.air_purifier_aqi
+      - vacuum.xiaomi_vacuum_cleaner
+      - fan.xiaomi_miio_device
+      - sensor.temperature_158d00022cc1c4
+      - sensor.humidity_158d00022cc1c4
+      - sensor.pressure_158d00022cc1c4
+      - sensor.temperature_158d000159f070
+      - sensor.humidity_158d000159f070
+      - sensor.temperature_158d00015aea48
+      - sensor.humidity_158d00015aea48
+      - sensor.dark_sky_temperature
+      
 
 mqtt:
   broker: localhost

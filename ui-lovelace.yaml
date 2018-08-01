@@ -142,22 +142,31 @@ views:
       #       entity: camera.grafana_1
       - type: picture-entity
         entity: camera.grafana_cpu
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_cpu2
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_memory
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_memory2
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_power
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_air
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_temp
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_hum
+        show_info: false
       - type: picture-entity
         entity: camera.grafana_power2
+        show_info: false
       #- type: picture
       #  entity: camera.grafana_1
       #  camera_image: camera.grafana_1
