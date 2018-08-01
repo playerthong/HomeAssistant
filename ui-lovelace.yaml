@@ -134,49 +134,49 @@ views:
          - entity: device_tracker.iphone_pavel
          - zone.home
 
-  - icon: mdi:chart-areaspline
-    title: Grafana
-    background: radial-gradient(crimson, skyblue)
-    cards:
-      # - type: image
-      #       entity: camera.grafana_1
-      # - type: picture-entity
-      #   entity: camera.grafana_cpu
-      #   show_info: false
-      - type: picture-entity
-        entity: camera.grafana_cpu2
-        show_info: false
-
-      - type: picture-entity
-        entity: camera.grafana_memory
-        show_info: false
-      # - type: picture-entity
-      #   entity: camera.grafana_memory2
-      #   show_info: false
-      - type: picture-entity
-        entity: camera.grafana_power
-        show_info: false
-      - type: picture-entity
-        entity: camera.grafana_air
-        show_info: false
-      - type: picture-entity
-        entity: camera.grafana_temp
-        show_info: false
-      - type: picture-entity
-        entity: camera.grafana_hum
-        show_info: false
-      # - type: picture-entity
-      #   entity: camera.grafana_power2
-      #   show_info: false
-      #- type: picture
-      #  entity: camera.grafana_1
-      #  camera_image: camera.grafana_1
-      #  style:
-      #    top: 5%
-      #    left: 10%
-      #    width: 10%
-      #    border: 2px solid red
-      #    border-radius: 10%
+#  - icon: mdi:chart-areaspline
+#    title: Grafana
+#    background: radial-gradient(crimson, skyblue)
+#    cards:
+#      # - type: image
+#      #       entity: camera.grafana_1
+#      # - type: picture-entity
+#      #   entity: camera.grafana_cpu
+#      #   show_info: false
+#      - type: picture-entity
+#        entity: camera.grafana_cpu2
+#        show_info: false
+#
+#      - type: picture-entity
+#        entity: camera.grafana_memory
+#        show_info: false
+#      # - type: picture-entity
+#      #   entity: camera.grafana_memory2
+#      #   show_info: false
+#      - type: picture-entity
+#        entity: camera.grafana_power
+#        show_info: false
+#      - type: picture-entity
+#        entity: camera.grafana_air
+#        show_info: false
+#      - type: picture-entity
+#        entity: camera.grafana_temp
+#        show_info: false
+#      - type: picture-entity
+#        entity: camera.grafana_hum
+#        show_info: false
+#      # - type: picture-entity
+#      #   entity: camera.grafana_power2
+#      #   show_info: false
+#      #- type: picture
+#      #  entity: camera.grafana_1
+#      #  camera_image: camera.grafana_1
+#      #  style:
+#      #    top: 5%
+#      #    left: 10%
+#      #    width: 10%
+#      #    border: 2px solid red
+#      #    border-radius: 10%
 
   - icon: mdi:palette-swatch
     title: Сущности
