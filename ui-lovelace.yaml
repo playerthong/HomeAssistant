@@ -138,7 +138,7 @@ views:
     background: radial-gradient(crimson, skyblue)
     cards:
       - type: entities
-        title: All binary_sensors
+        title: Все бинарные сенсоры
         entities:
           - binary_sensor.cube_158d000101aaff
           - binary_sensor.door_window_sensor_158d0001840154
@@ -155,7 +155,7 @@ views:
           - binary_sensor.water_leak_sensor_158d0001d78dda
 
       - type: entities
-        title: All trackers
+        title: Все трекеры
         entities:
           - device_tracker.iphone_
           - device_tracker.iphone_bt
@@ -163,12 +163,12 @@ views:
           - device_tracker.iphone_pavel_bt
 
       - type: entities
-        title: All fans
+        title: Все вентиляторы
         entities:
           - fan.xiaomi_miio_device
 
       - type: entities
-        title: All groups
+        title: Все группы
         entities:
           - group.ac
           - group.all_automations
@@ -182,7 +182,7 @@ views:
           - group.bt_trackers
 
       - type: entities
-        title: All input_boolean
+        title: Все логические переменные
         entities:
           - input_boolean.disable_doorbell
           - input_boolean.thermobool
@@ -193,7 +193,7 @@ views:
           - input_boolean.turn_on_tv_sound
 
       - type: entities
-        title: All lights
+        title: Весь свет
         entities:
           - light.gateway_light_f0b429cc3ea7
           - light.yeebedroom
@@ -202,19 +202,19 @@ views:
           - light.yeelight_ceiling_34ce008c2692
 
       - type: entities
-        title: All media
+        title: Вся медиа
         entities:
           - media_player.apple_tv_2
           - media_player.google_home
 
       - type: entities
-        title: All remotes
+        title: Все пульты
         entities:
           - remote.apple_tv_2
           - remote.xiaomi_miio_192_168_1_57
 
       - type: entities
-        title: All sensors
+        title: Все сенсоры
         entities:
           - sensor.gurskiyhomeassistant_last_build_state
           - sensor.vacuum_cleaner_error_sensor
@@ -287,7 +287,7 @@ views:
           - sensor.dark_sky_wind_speed
 
       - type: entities
-        title: Пылесосы
+        title: Пылесос
         entities:
           - sensor.vacuum_cleaner_error_sensor
           - sensor.vacuum_cleaner_status_sensor
@@ -300,7 +300,7 @@ views:
           - sensor.vacuum_cleaner_filter_left
 
       - type: entities
-        title: All switches
+        title: Все переключатели
         entities:
           - switch.original_xiaomi_mi_smart_wifi_socket
           - switch.wall_switch_158d00014ddc4f
@@ -308,7 +308,7 @@ views:
           - switch.wall_switch_right_158d00012bad35
 
       - type: entities
-        title: All vacuums
+        title: Все пылесосы
         entities:
           - vacuum.xiaomi_vacuum_cleaner
 
