@@ -50,9 +50,13 @@
       entity_id: input_boolean.disable_doorbell
       to: 'on'
   action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.google_home
+          volume_level: 0.30
       - service: notify.telegram
         data:
-         message: 'Дверной звонок перевед в тихий режим'
+         message: 'Режим сон ребенка включен'
       - delay:
           minutes: 180
       - service: homeassistant.turn_off
@@ -64,6 +68,10 @@
       entity_id: input_boolean.disable_doorbell
       to: 'off'
   action:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.google_home
+          volume_level: 0.75
       - service: notify.telegram
         data:
-         message: 'Дверной звонок вернулся в обычный режим'
+         message: 'Режим сон ребенка выключен'
