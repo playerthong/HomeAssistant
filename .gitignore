@@ -5,6 +5,7 @@
 !devices
 !groups
 !sensors
+!alerts
 !bash
 !shell
 !bash/git_pull.sh

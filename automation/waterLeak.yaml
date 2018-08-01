@@ -1,0 +1,57 @@
+- alias: water leak kitchen 
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d0001d72deb
+    to: 'off'
+  action:
+     - service: notify.telegram
+       data:
+        message: >
+          {% if is_state("binary_sensor.water_leak_sensor_158d0001d72deb", "on") %}
+            Обнаружена протечка на кухне!
+          {% elif is_state("binary_sensor.water_leak_sensor_158d0001d72deb", "off") %}
+            Протечка на кухне устранена!
+          {% else %}
+          {% endif %}
+     - service: tts.google_say
+       entity_id: media_player.google_home
+       data:
+        message: >
+          {% if is_state("binary_sensor.water_leak_sensor_158d0001d72deb", "on") %}
+            Обнаружена протечка на кухне!
+          {% elif is_state("binary_sensor.water_leak_sensor_158d0001d72deb", "off") %}
+            Протечка на кухне устранена!
+          {% else %}
+          {% endif %}
+
+- alias: water leak bathroom 
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d0001d78dda
+    to: 'off'
+  action:
+     - service: notify.telegram
+       data:
+        message: >
+          {% if is_state("binary_sensor.water_leak_sensor_158d0001d78dda", "on") %}
+            Обнаружена протечка в ванной!
+          {% elif is_state("binary_sensor.water_leak_sensor_158d0001d78dda", "off") %}
+            Протечка в ванной устранена!
+          {% else %}
+          {% endif %}
+     - service: tts.google_say
+       entity_id: media_player.google_home
+       data:
+        message: >
+          {% if is_state("binary_sensor.water_leak_sensor_158d0001d78dda", "on") %}
+            Обнаружена протечка в ванной!
+          {% elif is_state("binary_sensor.water_leak_sensor_158d0001d78dda", "off") %}
+            Протечка в ванной устранена!
+          {% else %}
+          {% endif %}
