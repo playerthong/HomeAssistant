@@ -5,12 +5,13 @@ thermobool:
   icon: mdi:air-conditioner
 
 disable_doorbell:
+  name: Режим сон ребенка
   initial: off
 
 guest_mode:
-  name: Guest Mode
+  name: Гостевой режим
   icon: mdi:account-multiple
 
 vacation_mode:
-  name: Vacation Mode
+  name: Режим отпуска
   icon: mdi:airplane

@@ -1,5 +1,5 @@
 alarm_status:
-    name: Alarm Status
+    name: Режим охраны
     options:
     - Disarmed
     - Armed Away
