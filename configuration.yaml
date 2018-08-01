@@ -150,14 +150,11 @@ group: !include_dir_merge_named groups/
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_list scripts/
 notify: !include notify.yaml
-
-sensor: !include sensors.yaml
-
+sensor: !include_dir_merge_list sensors/
+climate: !include devices/climate.yaml
 input_boolean: !include devices/input_boolean.yaml
 input_number: !include devices/input_number.yaml
-
-climate: !include devices/climate.yaml
-shell_command: !include shell_commands.yaml
+shell_command: !include_dir_merge_list shell/
 dialogflow:
 
 

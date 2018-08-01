@@ -4,7 +4,9 @@
 !customize
 !devices
 !groups
+!sensors
 !bash
+!shell
 !bash/git_pull.sh
 !scripts
 !automation

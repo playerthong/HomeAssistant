@@ -1,0 +1,15 @@
+tv_on:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6VHAP0BAABLAgAAwgYAAM4IAABaEQAAeiIAAAidAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFEBAgEBAQEBAgIBAgICAgIBAQECAQEBAQICAgECAgICBgNQA='
+
+tv_sound:
+  sequence:
+    - service: remote.send_command
+      entity_id: 'remote.xiaomi_miio_192_168_1_57'
+      data:
+        command:
+          - 'raw:Z6UlAK4BAADmAQAAUQMAAKQDAAAsCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0MBAQMBIyEBASMBAQEBASMBAA'

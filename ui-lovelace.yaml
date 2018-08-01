@@ -133,19 +133,12 @@ views:
         view: yes
         show_header_toggle: true
         entities:
+          - automation.startup_notification
+          - automation.update_config_if_travis_build_is_successfull
+          - automation.rainy_day
           - automation.acslid
           - automation.all_arrive_in_sosnovka
           - automation.all_leave_home
-          - automation.cond_18
-          - automation.cond_19
-          - automation.cond_20
-          - automation.cond_21
-          - automation.cond_22
-          - automation.cond_23
-          - automation.cond_24
-          - automation.cond_25
-          - automation.cooloff
-          - automation.coolon
           - automation.disable_doorbell_432432
           - automation.disable_doorbell_autoon
           - automation.doorbell_off
@@ -163,6 +156,16 @@ views:
           - automation.xswitch_computer_click
           - automation.xswitch_computer_double_click
           - automation.xswitch_computer_long_press
+          - automation.cond_18
+          - automation.cond_19
+          - automation.cond_20
+          - automation.cond_21
+          - automation.cond_22
+          - automation.cond_23
+          - automation.cond_24
+          - automation.cond_25
+          - automation.cooloff
+          - automation.coolon
 
       - type: entities
         title: All binary_sensors
@@ -304,7 +307,7 @@ views:
           - switch.wall_switch_right_158d00012bad35
 
       - type: entities
-        title: All vacuums12
+        title: All vacuums5
         entities:
           - vacuum.xiaomi_vacuum_cleaner
 
