@@ -1,0 +1,3 @@
+- platform: command_line
+    name: "grafana_power"
+    command: curl -s -H "Authorization: Bearer eyJrIjoiUlRhUTFSV2phSEJGZWkwcjdrbzJjWnRoV1l5WWFFbkYiLCJuIjoiZHMiLCJpZCI6MX0=" "http://home.gurskiy.com:3000/render/d-solo/Ok5-YggRk/home-assistant?orgId=1&panelId=20&from=1533130428826&to=1533132228827&width=1000&height=500&tz=UTC%2B03%3A00" > /home/homeassistant/.homeassistant/downloads/power.png

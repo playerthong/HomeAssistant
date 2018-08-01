@@ -134,6 +134,16 @@ views:
          - zone.home
 
   - icon: mdi:palette-swatch
+    title: Grafana
+    background: radial-gradient(crimson, skyblue)
+    cards:
+      - type: entities
+        title: Все бинарные сенсоры
+        entities:
+          - camera.grafana_power
+          - sensor.grafana_power
+
+  - icon: mdi:palette-swatch
     title: Сущности
     background: radial-gradient(crimson, skyblue)
     cards:
