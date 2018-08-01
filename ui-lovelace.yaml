@@ -141,6 +141,10 @@ views:
         title: Grafana
         entities:
           - camera.grafana_1
+      - type: image
+            entity: camera.grafana_1
+      - type: picture-entity
+            entity: camera.grafana_1
 
   - icon: mdi:palette-swatch
     title: Сущности
