@@ -145,6 +145,24 @@ views:
            - sensor.battery_door
            - sensor.battery_water_1
            - sensor.battery_water_2
+           - sensor.battery_cube
+           - sensor.battery_motion_1
+           - sensor.battery_motion_2
+           - sensor.battery_motion_3
+           - sensor.battery_switch_1
+           - sensor.battery_switch_2
+           - sensor.battery_switch_3
+           - sensor.battery_switch_4
+           - sensor.battery_wall_switch_1
+           - sensor.battery_wall_switch_2
+           - sensor.battery_iphone_1
+           - sensor.battery_iphone_2
+           - sensor.battery_temp_1
+           - sensor.battery_temp_2
+           - sensor.battery_temp_3
+           - sensor.battery_temp_4
+           - sensor.battery_temp_5
+           - sensor.battery_vacuum
 
 
 
