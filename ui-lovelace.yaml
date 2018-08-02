@@ -142,6 +142,7 @@ views:
          title: Датчики xiaomi
          show_header_toggle: false
          entities:
+           - sensor.battery_status
            - sensor.battery_door
            - sensor.battery_water_1
            - sensor.battery_water_2
@@ -155,6 +156,11 @@ views:
            - sensor.battery_switch_4
            - sensor.battery_wall_switch_1
            - sensor.battery_wall_switch_2
+
+       - type: entities
+         title: Датчики xiaomi 2
+         show_header_toggle: false
+         entities:
            - sensor.battery_iphone_1
            - sensor.battery_iphone_2
            - sensor.battery_temp_1
@@ -163,8 +169,6 @@ views:
            - sensor.battery_temp_4
            - sensor.battery_temp_5
            - sensor.battery_vacuum
-
-
 
 #  - icon: mdi:chart-areaspline
 #    title: Grafana

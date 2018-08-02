@@ -164,6 +164,9 @@ device_tracker:
       
 logger:
   default: warning
+  logs:
+    homeassistant.components.homekit: debug
+    pyhap: debug
 
 ios:
 
