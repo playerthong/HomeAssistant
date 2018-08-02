@@ -1,11 +1,11 @@
-sensor.home_to_work_bus:
-  friendly_name: Дом -> Работа (Автобус)
-
-sensor.work_to_home_bus:
-  friendly_name: Работа -> Дом (Автобус)
-
-sensor.home_to_work_car:
-  friendly_name: Дом -> Работа (Машина)
-
-sensor.sensor.work_to_home_car:
-  friendly_name: Работа -> Дом (Машина)
+#sensor.home_to_work_bus:
+#  friendly_name: Дом -> Работа (Автобус)
+#
+#sensor.work_to_home_bus:
+#  friendly_name: Работа -> Дом (Автобус)
+#
+#sensor.home_to_work_car:
+#  friendly_name: Дом -> Работа (Машина)
+#
+#sensor.sensor.work_to_home_car:
+#  friendly_name: Работа -> Дом (Машина)
