@@ -88,34 +88,6 @@ views:
           - sensor.temperature_158d00015aea48
           - sensor.humidity_158d00015aea48
 
-  
-      - type: entities
-        title: За бортом
-        show_header_toggle: false
-        entities:
-          - sensor.dark_sky_daily_summary
-          - sensor.dark_sky_hourly_summary
-          - sensor.dark_sky_summary
-          - sensor.dark_sky_temperature
-          - sensor.dark_sky_humidity
-          - sensor.dark_sky_daytime_high_temperature
-          - sensor.dark_sky_overnight_low_temperature
-          - sensor.dark_sky_precip_probability
-          - sensor.dark_sky_uv_index
-          - sensor.dark_sky_wind_speed
-          - sun.sun
-          # - sensor.yweather_temperature
-          # - sensor.yweather_humidity
-          # - sensor.yweather_pressure
-          # - sensor.yweather_current
-          # - sensor.yweather_temperature_max
-          # - sensor.yweather_temperature_min
-          # - sensor.yweather_wind_speed
-
-      - type: iframe
-        url: https://embed.windy.com/embed2.html?lat=55.786&lon=38.260&zoom=8&level=surface&overlay=rain&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=47.267&detailLon=11.400&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1
-        aspect_ratio: 75%
-
       - type: entities
         entities:
           - device_tracker.iphone_bt
@@ -131,12 +103,25 @@ views:
           - sensor.work_to_home_car
           - sensor.work_to_home_bus
 
-      - type: map
-        aspect_ratio: 100%
+      - type: entities
+        title: За бортом
+        show_header_toggle: false
         entities:
-         - entity: device_tracker.iphone_
-         - entity: device_tracker.iphone_pavel
-         - zone.home
+          - sensor.dark_sky_daily_summary
+          - sensor.dark_sky_hourly_summary
+          - sensor.dark_sky_summary
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_daytime_high_temperature
+          - sensor.dark_sky_overnight_low_temperature
+          - sensor.dark_sky_precip_probability
+          - sensor.dark_sky_uv_index
+          - sensor.dark_sky_wind_speed
+          - sun.sun
+
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=55.786&lon=37.260&zoom=8&level=surface&overlay=rain&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=47.267&detailLon=11.400&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1
+        aspect_ratio: 75%
 
       - type: picture-elements
         image: /local/vacuum_card.jpg
@@ -215,6 +200,16 @@ views:
             background-color: rgb(54, 65, 78)
             opacity: 0.8
 
+      - type: map
+        aspect_ratio: 100%
+        entities:
+         - entity: device_tracker.iphone_
+         - entity: device_tracker.iphone_pavel
+         - zone.home
+
+
+
+
   - icon: mdi:battery-charging
     title: Уровень заряда
     background: radial-gradient(crimson, skyblue)
@@ -255,50 +250,6 @@ views:
            - sensor.battery_temp_4
            - sensor.battery_temp_5
            - sensor.battery_vacuum
-
-#  - icon: mdi:chart-areaspline
-#    title: Grafana
-#    background: radial-gradient(crimson, skyblue)
-#    cards:
-#      # - type: image
-#      #       entity: camera.grafana_1
-#      # - type: picture-entity
-#      #   entity: camera.grafana_cpu
-#      #   show_info: false
-#      - type: picture-entity
-#        entity: camera.grafana_cpu2
-#        show_info: false
-#
-#      - type: picture-entity
-#        entity: camera.grafana_memory
-#        show_info: false
-#      # - type: picture-entity
-#      #   entity: camera.grafana_memory2
-#      #   show_info: false
-#      - type: picture-entity
-#        entity: camera.grafana_power
-#        show_info: false
-#      - type: picture-entity
-#        entity: camera.grafana_air
-#        show_info: false
-#      - type: picture-entity
-#        entity: camera.grafana_temp
-#        show_info: false
-#      - type: picture-entity
-#        entity: camera.grafana_hum
-#        show_info: false
-#      # - type: picture-entity
-#      #   entity: camera.grafana_power2
-#      #   show_info: false
-#      #- type: picture
-#      #  entity: camera.grafana_1
-#      #  camera_image: camera.grafana_1
-#      #  style:
-#      #    top: 5%
-#      #    left: 10%
-#      #    width: 10%
-#      #    border: 2px solid red
-#      #    border-radius: 10%
 
   - icon: mdi:palette-swatch
     title: Сущности
