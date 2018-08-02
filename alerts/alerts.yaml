@@ -1,9 +1,10 @@
-  door_open_long:
-    name: Front Door is still open!
-    entity_id: binary_sensor.door_window_sensor_158d0001840154
-    state: 'on'   
-    repeat: 1
-    can_acknowledge: true
-    #skip_first: true  
-    notifiers:
-      - telegram
+#  door_open_long:
+#    name: Front Door is still open!
+#    entity_id: binary_sensor.door_window_sensor_158d0001840154
+#    state: 'on'   
+#    repeat: 1
+#    can_acknowledge: true
+#    #skip_first: true  
+#    notifiers:
+#      - telegram
+#
