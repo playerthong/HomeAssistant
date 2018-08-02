@@ -63,16 +63,15 @@
   - service: notify.telegram
     data:
      message:  |
-         Доброе утро!
-         Сегодня {{as_timestamp(now()) | timestamp_custom('%A')}}, {% set day = (as_timestamp(now()) | timestamp_custom('%d')) |int-%}
-         {{day}}{%- if day >= 4 and day <= 20 or day >= 24 and day <= 30 -%}th
-         {%- elif day == 1 or day == 21 or day == 31-%}st
-         {%- elif day == 2 or day == 22 -%}nd
-         {%- elif day == 3 or day == 23 -%}rd
-         {%- endif %} {{as_timestamp(now()) | timestamp_custom('%B')}}
+         Доброе утро! 
+         {% set giorno = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"] %}
+         {%- set mese = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"] -%}
+         {%- set giorno_della_settimana = giorno[now().weekday()] -%}
+         {%- set mese = mese[now().month - 1] -%}
+         Сегодня {{ giorno_della_settimana.lower() }} {{ now().day }} {{ mese.lower() }}.  
          Сейчас {{states.sensor.dark_sky_summary.state.lower()}} и {{states.sensor.dark_sky_temperature.state|round}} градусов.
          Сегодня будет {{states.sensor.dark_sky_hourly_summary.state.lower()|replace(".", "")}},
-         максимальная теспература: {{states.sensor.dark_sky_daytime_high_temperature.state|round}}, минимальная температура: {{states.sensor.dark_sky_overnight_low_temperature.state|round}}.
+         максимальная температура: {{states.sensor.dark_sky_daytime_high_temperature.state|round}}, минимальная температура: {{states.sensor.dark_sky_overnight_low_temperature.state|round}}.
          Шанс, что сегодня будет дождь: {{states.sensor.dark_sky_precip_probability.state | int(0)}}%.
          {% if now().strftime("%a") == 'Tue' or now().strftime("%a") == 'Wed' or now().strftime("%a") == 'Thu' %}Приблизительное время до работы на машине: {{states.sensor.home_to_work_car.state}} минуты.{% endif %}
   - condition: state
