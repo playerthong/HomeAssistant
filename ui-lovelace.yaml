@@ -134,6 +134,20 @@ views:
          - entity: device_tracker.iphone_pavel
          - zone.home
 
+ - icon: mdi:battery-charging
+   title: Уровень заряда
+   background: radial-gradient(crimson, skyblue)
+   cards:
+      - type: entities
+      title: Время в пути
+      show_header_toggle: false
+      entities:
+        - sensor.battery_door
+        - sensor.battery_water_1
+        - sensor.battery_water_2
+
+
+
 #  - icon: mdi:chart-areaspline
 #    title: Grafana
 #    background: radial-gradient(crimson, skyblue)
