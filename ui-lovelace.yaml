@@ -150,7 +150,7 @@ views:
             top: 80%
             left: 80%
             "--paper-item-icon-color": rgb(115, 122, 130)
-    ​
+    
         - type: icon
           tap_action: call-service
           icon: mdi:home
@@ -160,7 +160,7 @@ views:
             top: 80%
             left: 60%
             "--paper-item-icon-color": rgb(115, 122, 130)
-    ​
+    
         - type: icon
           icon: mdi:play-pause
           tap_action: call-service
@@ -170,7 +170,7 @@ views:
             top: 80%
             left: 40%
             "--paper-item-icon-color": rgb(115, 122, 130)
-    ​
+    
         - type: icon
           icon: mdi:stop
           tap_action: call-service
@@ -180,7 +180,7 @@ views:
             top: 80%
             left: 20%
             "--paper-item-icon-color": rgb(115, 122, 130)
-    ​
+    
         - type: state-label
           entity: sensor.vacuum_status
           style:
@@ -197,7 +197,7 @@ views:
             border-color: rgb(34, 154, 210)
             background-color: rgb(54, 65, 78)
             opacity: 0.8
-    ​
+    
         - type: state-label
           entity: sensor.vacuum_battery
           style:
