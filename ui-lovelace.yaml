@@ -139,7 +139,7 @@ views:
          - zone.home
 
       - type: picture-elements
-        image: /images/vacuum_card.jpg
+        image: /local/vacuum_card.jpg
         elements:
         - type: icon
           icon: mdi:bell-ring
