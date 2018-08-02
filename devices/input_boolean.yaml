@@ -23,3 +23,6 @@ turn_on_tv:
 turn_on_tv_sound:
   name: Вкл колонки
   icon: mdi:speaker-wireless
+
+battery_status_update:
+  name: Батарейка садится

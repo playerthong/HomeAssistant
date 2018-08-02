@@ -12,5 +12,32 @@
      data:
       message: 'Кажется, дождик начался...'
 
+- alias: Battery Status Update
+  trigger:
+  - platform: time
+    minutes: '/5'
+    seconds: 00
+  action:
+  - alias: Battery Status Update
+    service: input_boolean.toggle
+    data:
+      entity_id: input_boolean.battery_status_update
+
+- alias: 'Battery Alert'
+  trigger:
+    - platform: time
+      at: '10:00:00'
+    - platform: time
+      at: '18:00:00'
+  condition:
+    condition: template
+    value_template: "{% if states('sensor.battery_status') %}{{ true }}{% else %}{{ false }}{% endif %}"
+  action:
+    - service: notify.telegram
+      data:
+       message: >-
+         These devices have low battery levels: {{ states('sensor.battery_status') }}
+
+
 
 
