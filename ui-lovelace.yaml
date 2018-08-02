@@ -139,10 +139,15 @@ views:
     background: radial-gradient(crimson, skyblue)
     cards:
        - type: entities
-         title: Датчики xiaomi
+         title: Садятся батарейки
          show_header_toggle: false
          entities:
            - sensor.battery_status
+
+       - type: entities
+         title: Датчики xiaomi
+         show_header_toggle: false
+         entities:
            - sensor.battery_door
            - sensor.battery_water_1
            - sensor.battery_water_2
