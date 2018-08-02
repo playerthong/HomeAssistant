@@ -4,8 +4,10 @@
 !customize
 !devices
 !groups
+!custom_components
 !sensors
 !images
+!images/vacuum_card.jpg
 !alerts
 !bash
 !shell

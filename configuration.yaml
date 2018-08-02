@@ -120,7 +120,11 @@ homekit:
       - sensor.temperature_158d00015aea48
       - sensor.humidity_158d00015aea48
       - sensor.dark_sky_temperature
-      
+
+media_player:
+  - platform: xiaomi_miio_gateway
+    host: 192.168.1.51
+    token: !secret xiaomi_key     
 
 mqtt:
   broker: localhost
