@@ -59,27 +59,23 @@
     - condition: state
       entity_id: input_boolean.vacation_mode
       state: 'off'
-#    - condition: or
-#      conditions:
-#      - condition: state
-#        entity_id: alarm_control_panel.home
-#        state: 'disarmed'
-#      - condition: state
-#        entity_id: alarm_control_panel.home
-#        state: 'armed_night'
   action:
-#  - service: light.turn_on
-#    entity_id: light.office_lights
   - service: notify.telegram
     data:
-     message: 'Доброе утро!'
+     message:  |
+         Доброе утро!
+         Сегодня {{as_timestamp(now()) | timestamp_custom('%A')}}, {% set day = (as_timestamp(now()) | timestamp_custom('%d')) |int-%}
+         {{day}}{%- if day >= 4 and day <= 20 or day >= 24 and day <= 30 -%}th
+         {%- elif day == 1 or day == 21 or day == 31-%}st
+         {%- elif day == 2 or day == 22 -%}nd
+         {%- elif day == 3 or day == 23 -%}rd
+         {%- endif %} {{as_timestamp(now()) | timestamp_custom('%B')}}
+         Сейчас {{states.sensor.dark_sky_summary.state.lower()}} и {{states.sensor.dark_sky_temperature.state|round}} градусов.
+         Сегодня будет {{states.sensor.dark_sky_hourly_summary.state|replace(".", "").lower()}},
+         макс: {{states.sensor.dark_sky_daytime_high_temperature.state|round}},
+         мин: {{states.sensor.dark_sky_overnight_low_temperature.state|round}}.
+         Шанс, что сегодня будет дождь: {{states.sensor.dark_sky_precip_probability.state | int(0)}}%.
+         {% if now().strftime("%a") == 'Tue' or now().strftime("%a") == 'Wed' or now().strftime("%a") == 'Thu' %}Приблизительное время до работы на машине: {{states.sensor.home_to_work_car.state}} минуты.{% endif %}
   - condition: state
     entity_id: binary_sensor.bedroom_door
     state: 'on'
-#  - service: notify.
-#    data_template:
-#      message: 't!'
-#  - service: tts.google_say
-#    entity_id: media_player.
-#    data:
-#      message: ""
