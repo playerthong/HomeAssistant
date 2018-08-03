@@ -9,8 +9,8 @@
     - delay: 00:05  # Waits 5 minutes
     - service: homekit.start
     - service: notify.telegram
-    data:
-     message: 'HomeKit запущен'
+      data:
+       message: 'HomeKit запущен'
 
 - alias: 'Travis failed'
   trigger:
@@ -56,17 +56,17 @@
       data:
        message: 'Неверно введен пароль'
 
-#- alias: HA Update Available
-#  trigger:
-#    - platform: state
-#      entity_id: sensor.ha_last_version
-#  condition:
-#    - condition: template
-#      value_template: '{{ states.ha_last_version.state != states.ha_current_version.state }}'
-#  action:
-#    service: notify.telegram
-#    data_template:
-#      message: "{{ '\u267B\uFE0F' }} Новая версия *Home Assistant {{ states.sensor.ha_last_version.state }}* доступна для обновления"        
+- alias: HA Update Available
+  trigger:
+    - platform: state
+      entity_id: sensor.ha_last_version
+  condition:
+    - condition: template
+      value_template: '{{ states.ha_last_version.state != states.ha_current_version.state }}'
+  action:
+    service: notify.telegram
+    data_template:
+      message: "{{ '\u267B\uFE0F' }} Новая версия *Home Assistant {{ states.sensor.ha_last_version.state }}* доступна для обновления"        
 #- alias: telegram test at 10:00
 #  trigger:
 #    platform: time
