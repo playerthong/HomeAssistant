@@ -1,0 +1,17 @@
+sensor:
+  - platform: rest
+    resource: http://ip.jsontest.com
+    name: External IP
+    value_template: '{{ value_json.ip }}'
+
+sensor:
+  - platform: rest
+    resource: https://pypi.python.org/pypi/homeassistant/json
+    name: HA Last version
+    value_template: '{{ value_json.info.version }}'
+
+sensor:
+  - platform: rest
+    resource: !secret yandex_rasp_url1
+    name: suburban_from_hovrino
+    value_template: '{{ value_json.schedule.11.arrival }}'

@@ -407,6 +407,15 @@ views:
           - sensor.dark_sky_wind_speed
 
       - type: entities
+        title: Rest
+        view: yes
+        show_header_toggle: false
+        entities:
+          - sensor.external_ip
+          - sensor.ha_last_version
+          - sensor.suburban_from_hovrino
+
+      - type: entities
         title: Пылесос
         entities:
           - sensor.vacuum_cleaner_error_sensor
@@ -568,5 +577,8 @@ views:
           - automation.testtts
           - automation.update_notification
           - automation.login_failure
+
+
+
 
    
