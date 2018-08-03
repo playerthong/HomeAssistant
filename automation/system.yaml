@@ -68,3 +68,29 @@
 #     - service: notify.notify
 #       data:
 #        message: '{{trigger.event.data.host_name}}'
+
+- alias: 'Start HomeKit'
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      - delay: 00:02  # Waits 5 minutes
+      - service: homekit.start
+
+
+#- alias: Start HomeKit
+#  trigger:
+#    platform: template
+#    value_template: "{{ states('устройство_aqara') != 'unknown' and states('устройство_mqtt') != 'unknown'}}"
+#  action:
+#    - service: homekit.start
+#    - service: automation.turn_off
+#      entity_id: automation.start_homekit
+#
+#- alias: Start HAss
+#  trigger:
+#    platform: homeassistant
+#    event: start
+#  action:
+#    - service: automation.turn_on
+#      entity_id: automation.start_homekit

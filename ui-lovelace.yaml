@@ -568,5 +568,6 @@ views:
           - automation.testtts
           - automation.update_notification
           - automation.login_failure
+          - automation.start_homeKit
 
    
