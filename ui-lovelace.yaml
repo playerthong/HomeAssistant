@@ -98,6 +98,7 @@ views:
         show_header_toggle: false
         entities:
          # - sensor.phone_to_home_car
+          - input_boolean.from_work_on_auto
           - sensor.home_to_work_car
           - sensor.home_to_work_bus
           - sensor.work_to_home_car
@@ -309,6 +310,7 @@ views:
           - input_number.sliderac
           - input_boolean.turn_on_tv
           - input_boolean.turn_on_tv_sound
+          - input_boolean.from_work_on_auto
 
       - type: entities
         title: Весь свет

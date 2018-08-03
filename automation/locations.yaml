@@ -42,7 +42,13 @@
   action:
      - service: notify.telegram
        data:
-        message: 'Павлик ушел с работы. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}'
+      #  message: 'Павлик ушел с работы. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}'
+        message: >-
+          {% if is_state('input_boolean.from_work_on_auto', 'off') %}
+            'Павлик ушел с работы. Едет на общественном транспорте. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}'   
+          {% elif is_state('input_boolean.from_work_on_auto', 'on') %}
+            'Павлик ушел с работы. Едет на машине. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_car.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}'   
+          {% endif %}
      - condition: state
        entity_id: input_boolean.disable_doorbell
        state: 'off'
@@ -50,7 +56,11 @@
        entity_id: media_player.google_home
        data_template:
          message: >
-           Павлик ушел с работы. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}
+          {% if is_state('input_boolean.from_work_on_auto', 'off') %}
+            Павлик ушел с работы. Едет на общественном транспорте. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_bus.state | default(0) | int)*60) | timestamp_custom("%H:%M")}} 
+          {% elif is_state('input_boolean.from_work_on_auto', 'on') %}
+            Павлик ушел с работы. Едет на машине. Приблизительное время прибытия: {{(as_timestamp(now()) + (states.sensor.work_to_home_car.state | default(0) | int)*60) | timestamp_custom("%H:%M")}}
+          {% endif %}
         
 
 - alias: 'All arrive in sosnovka'

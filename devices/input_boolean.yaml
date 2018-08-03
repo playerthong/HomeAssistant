@@ -26,3 +26,8 @@ turn_on_tv_sound:
 
 battery_status_update:
   name: Батарейка садится
+
+from_work_on_auto:
+  name: С работы на машине
+  #initial: off
+  icon: mdi:car
