@@ -5,10 +5,13 @@
     minutes: 30
     seconds: 0
   action:
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.google_home
-      volume_level: 0.50
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.google_home
+        volume_level: 0.20
+    - service: notify.telegram
+      data:
+       message: 'Google home громкость на 20%'
 
 - alias: Set GA Volume To High Daytime
   trigger:
@@ -17,10 +20,13 @@
     minutes: 0
     seconds: 0
   action:
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.google_home
-      volume_level: 0.75
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.google_home
+        volume_level: 0.75
+    - service: notify.telegram
+      data:
+       message: 'Google home громкость на 75%'
 
 #- alias: Keep Google Home Alive
 #  trigger:
