@@ -31,27 +31,25 @@
     - service: homeassistant.restart
 
 - alias: "Update Notification"
-    hide_entity: false
-    trigger:
-      platform: state
-      entity_id: updater.updater
-    condition:
-      - condition: template
-        value_template: "{{ states('updater.updater') != 'unknown' }}"
-    action:
-      - service: notify.telegram
-        data:
-         message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  condition:
+    - condition: template
+      value_template: "{{ states('updater.updater') != 'unknown' }}"
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
 
 - alias: Login Failure
-    hide_entity: false
-    trigger:
-      platform: template
-      value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
-    action:
-      - service: notify.telegram
-        data:
-         message: 'Неверно введен пароль'
+  trigger:
+    platform: template
+    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
+  action:
+    - service: notify.telegram
+      data:
+       message: 'Неверно введен пароль'
           
 #- alias: telegram test at 10:00
 #  trigger:
