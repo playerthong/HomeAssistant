@@ -566,5 +566,7 @@ views:
           - automation.system_new_device_connected
           - automation.telegram_test_at_1000
           - automation.testtts
+          - automation.update_notification
+          - automation.login_failure
 
    
