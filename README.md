@@ -1,5 +1,8 @@
 # HomeAssistant
-![alt text](https://user-images.githubusercontent.com/9033473/43524379-d067e6fa-95a7-11e8-91c7-5357d616a29c.png)
+![alt text](https://user-images.githubusercontent.com/9033473/43629688-a2d2f4cc-9706-11e8-90f9-c2e835283d2a.png)
+![alt text](https://user-images.githubusercontent.com/9033473/43629686-a2b62f18-9706-11e8-9628-adb6ea6e6daa.PNG)
+![alt text](https://user-images.githubusercontent.com/9033473/43629741-c32f75b0-9706-11e8-974b-13cfef1c4269.png)
+![alt text](https://user-images.githubusercontent.com/9033473/43629685-a2917402-9706-11e8-922c-46d465470195.png)
 
 Используемое оборудование / Devices:
 
