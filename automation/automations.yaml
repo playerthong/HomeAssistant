@@ -36,7 +36,7 @@
     - service: notify.telegram
       data:
        message: >-
-         These devices have low battery levels: {{ states('sensor.battery_status') }}
+         Садятся батарейки у: {{ states('sensor.battery_status') }}
 
 
 
