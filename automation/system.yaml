@@ -6,6 +6,8 @@
     - service: notify.telegram
       data:
        message: 'Home assistant перезагрузился'
+    - delay: 00:05  # Waits 5 minutes
+    - service: homekit.start
 
 - alias: 'Travis failed'
   trigger:
@@ -69,13 +71,13 @@
 #       data:
 #        message: '{{trigger.event.data.host_name}}'
 
-- alias: 'Start HomeKit'
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-    - delay: 00:02  # Waits 5 minutes
-    - service: homekit.start
+#- alias: 'Start HomeKit'
+#  trigger:
+#    platform: homeassistant
+#    event: start
+#  action:
+#    - delay: 00:02  # Waits 5 minutes
+#    - service: homekit.start
 
 
 #- alias: Start HomeKit
@@ -94,3 +96,15 @@
 #  action:
 #    - service: automation.turn_on
 #      entity_id: automation.start_homekit
+
+#- alias: Stop
+#  trigger:
+#    platform: homeassistant
+#    event: shutdown
+#  action:
+#    - service: mqtt.publish
+#      data:
+#        topic: "hass/status"
+#        retain: true
+#        payload: "offline"
+#    - service: shell_command.beep_stop

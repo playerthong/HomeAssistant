@@ -89,6 +89,7 @@ xiaomi_aqara:
      key: !secret xiaomi_key
 
 homekit:
+  auto_start: False
   filter:
     include_entities:
       - alarm_control_panel.home
