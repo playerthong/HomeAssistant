@@ -70,12 +70,12 @@
 #        message: '{{trigger.event.data.host_name}}'
 
 - alias: 'Start HomeKit'
-    trigger:
-      - platform: homeassistant
-        event: start
-    action:
-      - delay: 00:02  # Waits 5 minutes
-      - service: homekit.start
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - delay: 00:02  # Waits 5 minutes
+    - service: homekit.start
 
 
 #- alias: Start HomeKit
