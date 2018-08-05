@@ -194,7 +194,7 @@ sensor.pressure_158d00022cc1c4:
   platform: xiaomi_aqara
   unique_id: pressure158d00022cc1c4
 media_player.google_home:
-  config_entry_id:
+  config_entry_id: ec48e938938a4d53a869731e940aa955
   name:
   platform: cast
   unique_id: c1185adc-2e2d-f5d9-29ee-9d46120e7706
@@ -248,3 +248,8 @@ sensor.weather_pws_wind_kph:
   name:
   platform: wunderground
   unique_id: '@37.615600,55.752200,wind_kph'
+binary_sensor.door_window_sensor_158d0002059b82:
+  config_entry_id:
+  name:
+  platform: xiaomi_aqara
+  unique_id: status158d0002059b82
