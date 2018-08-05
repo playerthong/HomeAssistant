@@ -47,7 +47,7 @@ http:
 updater:
 discovery:
 conversation:
-history:
+#history:
 logbook:
 map:
 sun:
