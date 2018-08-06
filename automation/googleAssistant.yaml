@@ -9,7 +9,7 @@
       data:
         entity_id: media_player.google_home
         volume_level: 0.20
-    - service: notify.telegram_log
+    - service: notify.log
       data:
        message: 'Google home громкость на 20%'
 
@@ -24,7 +24,7 @@
       data:
         entity_id: media_player.google_home
         volume_level: 0.75
-    - service: notify.telegram_log
+    - service: notify.log
       data:
        message: 'Google home громкость на 75%'
 

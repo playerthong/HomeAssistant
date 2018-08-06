@@ -2,10 +2,10 @@
   platform: telegram
   chat_id: !secret telegram_bot_allowed_chat_id2
 
-- name: telegram_log
+- name: log
   platform: telegram
   chat_id: !secret telegram_bot_allowed_chat_id3
 
-- name: telegram_direct
+- name: direct
   platform: telegram
   chat_id: !secret telegram_bot_allowed_chat_id1
