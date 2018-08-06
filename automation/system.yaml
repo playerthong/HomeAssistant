@@ -3,12 +3,12 @@
     platform: homeassistant
     event: start
   action:
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'Home assistant перезагрузился'
     - delay: 00:05  # Waits 5 minutes
     - service: homekit.start
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'HomeKit запущен'
 
@@ -18,7 +18,7 @@
     entity_id: sensor.gurskiyhomeassistant_last_build_state
     to: 'failed'
   action:
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'Travis не смог собрать проект'
 
@@ -28,7 +28,7 @@
     entity_id: sensor.gurskiyhomeassistant_last_build_state
     to: 'passed'
   action:
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
     - service: shell_command.git_pull
@@ -43,7 +43,7 @@
     - condition: template
       value_template: "{{ states('updater.updater') != 'unknown' }}"
   action:
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'Travis успешно собрал проект, делаем git pull и перезагружаемся'
 
@@ -52,7 +52,7 @@
     platform: template
     value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
   action:
-    - service: notify.log
+    - service: notify.telegram_log
       data:
        message: 'Неверно введен пароль'
 
@@ -64,7 +64,7 @@
     - condition: template
       value_template: '{{ states.ha_last_version.state != states.ha_current_version.state }}'
   action:
-    service: notify.log
+    service: notify.telegram_log
     data_template:
       message: "{{ '\u267B\uFE0F' }} Новая версия *Home Assistant {{ states.sensor.ha_last_version.state }}* доступна для обновления"      
 
@@ -78,7 +78,7 @@
     condition: template
     value_template: '{{ "service" in trigger.event.data.message }}'
   action:
-    service: notify.log
+    service: notify.telegram_log
     data_template:
       message: "{{ '\u267B\uFE0F' }} Ошибка {{ trigger.event.data.message }}"      
 
