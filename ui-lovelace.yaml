@@ -532,7 +532,7 @@ views:
         view: yes
         show_header_toggle: true
         entities:
-          - automation.rainy_day
+          #- automation.rainy_day
           - automation.morning_rule
           - automation.acslid
           - automation.front_door 
@@ -577,6 +577,7 @@ views:
           - automation.testtts
           - automation.update_notification
           - automation.login_failure
+          - automation.ha_error_notify
 
 
 

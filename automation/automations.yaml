@@ -1,16 +1,16 @@
-- alias: 'Rainy Day'
-  trigger:
-    - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'rain'
-  condition:
-    - condition: time
-      after: '08:00'
-      before: '23:00'
-  action:
-   - service: notify.telegram
-     data:
-      message: 'Кажется, дождик начался...'
+#- alias: 'Rainy Day'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.dark_sky_precip
+#      to: 'rain'
+#  condition:
+#    - condition: time
+#      after: '08:00'
+#      before: '23:00'
+#  action:
+#   - service: notify.telegram
+#     data:
+#      message: 'Кажется, дождик начался...'
 
 - alias: Battery Status Update
   trigger:
