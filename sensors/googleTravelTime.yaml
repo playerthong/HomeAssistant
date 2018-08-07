@@ -1,32 +1,32 @@
 - platform: google_travel_time
   name: home to work car
   api_key: !secret google_api
-  origin: !secret home_adress
-  destination: !secret work_adress
+  origin: !secret home_adress_waze
+  destination: !secret work_adress_waze
   options:
     mode: driving
 
 - platform: google_travel_time
   name: work to home car
   api_key: !secret google_api
-  origin: !secret work_adress
-  destination: zone.home
+  origin: !secret work_adress_waze
+  destination: !secret home_adress_waze
   options:
     mode: driving
 
 - platform: google_travel_time
   name: home to work bus
   api_key: !secret google_api
-  origin: !secret home_adress
-  destination: !secret work_adress
+  origin: !secret home_adress_waze
+  destination: !secret work_adress_waze
   options:
     mode: transit 
 
 - platform: google_travel_time
   name: work to home bus
   api_key: !secret google_api
-  origin: !secret work_adress
-  destination: !secret home_adress
+  origin: !secret work_adress_waze
+  destination: !secret home_adress_waze
   options:
     mode: transit 
 
@@ -34,7 +34,7 @@
   name: Phone To Home
   api_key: !secret google_api
   origin: device_tracker.iphone_pavel
-  destination: !secret home_adress
+  destination: !secret home_adress_waze
 
 - platform: waze_travel_time
   name: work to home car waze
