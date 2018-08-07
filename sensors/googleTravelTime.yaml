@@ -35,3 +35,15 @@
   api_key: !secret google_api
   origin: device_tracker.iphone_pavel
   destination: !secret home_adress
+
+- platform: waze_travel_time
+  name: work to home car waze
+  origin: !secret work_adress
+  destination: !secret home_adress
+  region: 'EU'
+
+- platform: waze_travel_time
+  name: home to work car waze
+  origin: !secret home_adress
+  destination: !secret work_adress
+  region: 'EU'
