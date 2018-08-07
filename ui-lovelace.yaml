@@ -100,8 +100,10 @@ views:
          # - sensor.phone_to_home_car
           - input_boolean.from_work_on_auto
           - sensor.home_to_work_car
-          - sensor.home_to_work_bus
+          - sensor.home_to_work_car_waze
           - sensor.work_to_home_car
+          - sensor.work_to_home_car_waze
+          - sensor.home_to_work_bus
           - sensor.work_to_home_bus
 
       - type: entities
