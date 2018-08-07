@@ -49,7 +49,7 @@ discovery:
 conversation:
 #history:
 logbook:
-#system_log:
+system_log:
 map:
 sun:
 cloud:

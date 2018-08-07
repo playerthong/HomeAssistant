@@ -545,8 +545,8 @@ views:
         view: yes
         show_header_toggle: true
         entities:
-          - automation.disable_guestMode_autoOn
-          - automation.disable_guestMode
+          - automation.disable_guestmode_autoon
+          - automation.disable_guestmode
           - automation.doorbell_off
           - automation.doorbell_on
           - automation.disable_doorbell_432432
@@ -578,6 +578,8 @@ views:
           - automation.update_notification
           - automation.login_failure
           - automation.ha_error_notify
+          - automation.ssl_expiry_notification
+          - automation.auto_renew_ssl_cert
 
 
 

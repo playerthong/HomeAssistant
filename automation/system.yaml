@@ -70,18 +70,38 @@
 
 
 
-#- alias: HA error notify
-#  trigger:
-#    platform: event
-#    event_type: system_log_event
-#  condition:
-#    condition: template
-#    value_template: '{{ "service" in trigger.event.data.message }}'
-#  action:
-#    service: notify.telegram_log
-#    data_template:
-#      message: "{{ '\u267B\uFE0F' }} Ошибка {{ trigger.event.data.message }}"      
+- alias: HA error notify
+  trigger:
+    platform: event
+    event_type: system_log_event
+  condition:
+    condition: template
+    value_template: '{{ "service" in trigger.event.data.message }}'
+  action:
+    service: notify.telegram_log
+    data_template:
+      message: "{{ '\u267B\uFE0F' }} Ошибка {{ trigger.event.data.message }}"      
 
+- alias: 'SSL expiry notification'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ssl_cert_expiry
+    below: 21
+  action:
+    service: notify.telegram_log
+    data:
+      message: 'Warning - SSL certificate expires in 21 days and has not been automatically renewed'
+
+- alias: 'Auto Renew SSL Cert'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ssl_cert_expiry
+    below: 29
+  action:
+    - service: notify.telegram_log
+      data:
+        message: 'Autorenew ssl'
+    - service: shell_command.renew_ssl
 
 #- alias: telegram test at 10:00
 #  trigger:
