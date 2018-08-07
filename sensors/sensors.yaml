@@ -9,4 +9,5 @@
     - last_build_state
 
 - platform: cert_expiry
-  host: !secret base_https_url
+  host: !secret base_url
+  port: 433 #433

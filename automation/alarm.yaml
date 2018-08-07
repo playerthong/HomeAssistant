@@ -108,7 +108,7 @@
        data:
         message: 'Включен режим гостя'
      - delay:
-         minutes:7280
+          minutes: 7280
      - service: homeassistant.turn_off
        entity_id: input_boolean.guest_mode
 
