@@ -6,7 +6,7 @@
     - service: notify.telegram_log
       data:
        message: 'Home assistant перезагрузился'
-    - delay: 00:05  # Waits 5 minutes
+    - delay: 00:01  # Waits 5 minutes
     - service: homekit.start
     - service: notify.telegram_log
       data:
@@ -70,17 +70,17 @@
 
 
 
-- alias: HA error notify
-  trigger:
-    platform: event
-    event_type: system_log_event
-  condition:
-    condition: template
-    value_template: '{{ "service" in trigger.event.data.message }}'
-  action:
-    service: notify.telegram_log
-    data_template:
-      message: "{{ '\u267B\uFE0F' }} Ошибка {{ trigger.event.data.message }}"      
+#- alias: HA error notify
+#  trigger:
+#    platform: event
+#    event_type: system_log_event
+#  condition:
+#    condition: template
+#    value_template: '{{ "service" in trigger.event.data.message }}'
+#  action:
+#    service: notify.telegram_log
+#    data_template:
+#      message: "{{ '\u267B\uFE0F' }} Ошибка {{ trigger.event.data.message }}"      
 
 
 #- alias: telegram test at 10:00
