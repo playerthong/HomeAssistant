@@ -9,4 +9,4 @@
     - last_build_state
 
 - platform: cert_expiry
-  host: home.gurskiy.com
+  host: !secret base_https_url
