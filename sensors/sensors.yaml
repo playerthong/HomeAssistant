@@ -7,3 +7,6 @@
     - master
   monitored_conditions:
     - last_build_state
+
+- platform: cert_expiry
+  host: home.gurskiy.com

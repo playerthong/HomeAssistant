@@ -256,6 +256,14 @@ views:
     title: Сущности
     background: radial-gradient(crimson, skyblue)
     cards:
+    
+      - type: entities
+        title: Система
+        entities:
+          - sensor.ssl_cert_expiry
+          - sensor.external_ip
+          - sensor.ha_last_version
+
       - type: entities
         title: Все бинарные сенсоры
         entities:
