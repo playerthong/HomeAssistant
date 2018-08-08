@@ -5,6 +5,9 @@ views:
     id: home
     background: radial-gradient(crimson, skyblue)
     theme: dark-mode
+    #badges:
+    #  - device_tracker.iphone_bt
+    #  - device_tracker.iphone_pavel_bt
     cards:
       - type: entities
         title: Общее
