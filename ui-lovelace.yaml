@@ -14,9 +14,11 @@ views:
         entities:
           #- input_select.alarm_status
           - alarm_control_panel.home
+            secondary_info: last-changed
           - input_boolean.disable_doorbell
           - input_boolean.guest_mode
           - binary_sensor.door_window_sensor_158d0001840154
+            secondary_info: last-changed
           #- input_boolean.vacation_mode
 
       - type: entities
@@ -55,7 +57,9 @@ views:
         entities:
           - switch.wall_switch_158d00014ddc4f
           - binary_sensor.door_window_sensor_158d0001840154
+            secondary_info: last-changed
           - binary_sensor.motion_sensor_158d000158281b
+            secondary_info: last-changed
           - light.gateway_light_f0b429cc3ea7
          # - input_boolean.disable_doorbell
          # - input_boolean.guest_mode
@@ -69,6 +73,7 @@ views:
           - sensor.pressure_158d00022cc1c4
           - switch.wall_switch_left_158d00012bad35
           - binary_sensor.motion_sensor_158d000113c470
+            secondary_info: last-changed
           - binary_sensor.water_leak_sensor_158d0001d78dda
 
       - type: entities
@@ -80,6 +85,7 @@ views:
           - switch.wall_switch_right_158d00012bad35
           - binary_sensor.water_leak_sensor_158d0001d72deb
           - binary_sensor.motion_sensor_158d00015da341
+            secondary_info: last-changed
 
       - type: entities
         title: Детская
