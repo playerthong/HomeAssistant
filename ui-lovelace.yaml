@@ -624,9 +624,9 @@ views:
             "off": opacity(50%) 
             "on": opacity(1%)
           style:
-            top: 82%
-            left: 74.25%
-            width: 30%
+            top: 85%
+            left: 78.25%
+            width: 34.3%
       
         - type: image
           tap_action: toggle
@@ -636,9 +636,9 @@ views:
             "off": opacity(50%)
             "on": opacity(1%)
           style:
-            top: 68.7%
-            left: 34.5%
-            width: 49%
+            top: 70.5%
+            left: 32.5%
+            width: 56%
       
         - type: image
           tap_action: toggle
@@ -648,9 +648,9 @@ views:
             "off": opacity(50%)
             "on": opacity(1%)
           style:
-            top: 52.25%
-            left: 59%
-            width: 58%
+            top: 53.25%
+            left: 61%
+            width: 68%
 
         - type: image
           tap_action: toggle
@@ -660,59 +660,30 @@ views:
             "off": opacity(50%)
             "on": opacity(1%)
           style:
-            top: 25.25%
-            left: 33%
-            width: 42%
+            top: 22.85%
+            left: 29%
+            width: 50%
 
         - type: image
           tap_action: toggle
           entity: switch.wall_switch_right_158d00012bad35
           image: /local/Floorplan2/bathroom.png
           state_filter:
-            "off": opacity(50%)
+            "off": opacity(60%)
             "on": opacity(1%)
           style:
-            top: 87%
-            left: 45%
-            width: 30%
+            top: 89.5%
+            left: 44%
+            width: 34.5%
 
-#      - type: picture-elements
-#        image: /local/Floorplan.png
-#        elements:
-#      
-#        - type: image
-#          tap_action: toggle
-#          entity: switch.wall_switch_left_158d00012bad35
-#          image: /local/Floorplan/kitchen.png
-#          state_filter:
-#            "off": opacity(50%)
-#            "on": opacity(1%)
-#          style:
-#            top: 80%
-#            left: 27.25%
-#            width: 39.75%
-#      
-#        - type: image
-#          tap_action: toggle
-#          entity: switch.wall_switch_158d00014ddc4f
-#          image: /local/Floorplan/hallway.png
-#          state_filter:
-#            "off": opacity(50%)
-#            "on": opacity(1%)
-#          style:
-#            top: 73.7%
-#            left: 70.5%
-#            width: 43.75%
-#      
-#        - type: image
-#          tap_action: toggle
-#          entity: light.yeebigroom
-#          image: /local/Floorplan/living_room.png
-#          state_filter:
-#            "off": opacity(50%)
-#            "on": opacity(1%)
-#          style:
-#            top: 36.25%
-#            left: 50%
-#            width: 85%
-      
+        - type: image
+          tap_action: toggle
+          entity: automation.dummy
+          image: /local/Floorplan2/child.png
+          state_filter:
+            "off": opacity(60%)
+            "on": opacity(1%)
+          style:
+            top: 18.5%
+            left: 74.5%
+            width: 40.9%
