@@ -3,6 +3,7 @@
 ![alt text](https://user-images.githubusercontent.com/9033473/43629686-a2b62f18-9706-11e8-9628-adb6ea6e6daa.PNG)
 ![alt text](https://user-images.githubusercontent.com/9033473/43629741-c32f75b0-9706-11e8-974b-13cfef1c4269.png)
 ![alt text](https://user-images.githubusercontent.com/9033473/43629685-a2917402-9706-11e8-922c-46d465470195.png)
+![alt text](https://user-images.githubusercontent.com/9033473/43864192-b88e3b0e-9b67-11e8-9ba7-201148058966.PNG)
 
 Используемое оборудование / Devices:
 
