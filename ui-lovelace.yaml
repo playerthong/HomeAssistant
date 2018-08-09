@@ -615,7 +615,31 @@ views:
       - type: picture-elements
         image: /local/Floorplan2.png
         elements:
-      
+
+        - type: state-icon
+          entity: sensor.dark_sky_apparent_temperature
+          style:
+            top: 97.5%
+            left: 2%
+            pointer-events: none
+            max-width: 24px
+            max-height: 24px
+            color: rgb(249, 251, 255)
+        - type: state-label
+          entity: sensor.dark_sky_apparent_temperature
+          style:
+            top: 96.2%
+            left: 3.9%
+            font-weight: bold
+            color: rgb(249, 251, 255)
+            font-family: Trebuchet MS
+            text-shadow: 2px 2px DarkSlateGrey
+            font-size: 70%
+            text-rendering: optimizeLegibility
+            -moz-osx-font-smoothing: grayscale
+            font-smoothing: antialiased
+            -webkit-font-smoothing: antialiased
+
         - type: image
           tap_action: toggle
           entity: switch.wall_switch_left_158d00012bad35
@@ -627,6 +651,48 @@ views:
             top: 85%
             left: 78.25%
             width: 34.3%
+         # - sensor.temperature_158d00022cc1c4
+         # - sensor.humidity_158d00022cc1c4
+
+
+
+        - type: icon
+          icon: mdi:temperature-celsius
+          entity: sensor.temperature_158d00022cc1c4
+          tap_action: more-info
+          style:
+            right: 24%
+            top: 93.5%      
+            opacity: 0.5
+            #color: white
+           # "--paper-item-icon-color": rgb(115, 122, 130)
+#            text-shadow: 1px 1px black
+        - type: state-label
+          entity: sensor.temperature_158d00022cc1c4
+          style:
+            right: 16%
+            top: 96%
+            opacity: 0.5
+           # color: rgb(244, 131, 66)
+#            text-shadow: 1px 1px black
+
+        - type: icon
+          icon: mdi:water
+          entity: sensor.humidity_158d00022cc1c4
+          tap_action: more-info
+          style:
+            right: 12%
+            top: 93.5%     
+            opacity: 0.5
+          #  color: white
+        - type: state-label
+          entity: sensor.humidity_158d00022cc1c4
+          style:
+            right: 5%
+            top: 96%
+            opacity: 0.5
+          #  color: white
+
       
         - type: image
           tap_action: toggle
@@ -652,6 +718,42 @@ views:
             left: 61%
             width: 68%
 
+        - type: icon
+          icon: mdi:temperature-celsius
+          entity: sensor.temperature_158d000129ab32
+          tap_action: more-info
+          style:
+            left: 54%
+            top: 66.5%    
+            opacity: 0.5  
+            color: white
+
+        - type: state-label
+          entity: sensor.temperature_158d000129ab32
+          style:
+            left: 54%
+            top: 69.5%
+            opacity: 0.5
+            color: white
+
+
+        - type: icon
+          icon: mdi:water
+          entity: sensor.humidity_158d000129ab32
+          tap_action: more-info
+          style:
+            left: 68%
+            top: 66.5%     
+            opacity: 0.5   
+            color: white
+        - type: state-label
+          entity: sensor.humidity_158d000129ab32
+          style:
+            left: 68%
+            top: 69.5%
+            opacity: 0.5
+            color: white
+
         - type: image
           tap_action: toggle
           entity: light.yeebedroom
@@ -663,6 +765,41 @@ views:
             top: 22.85%
             left: 29%
             width: 50%
+
+        - type: icon
+          icon: mdi:temperature-celsius
+          entity: sensor.temperature_158d0001573ea5
+          tap_action: more-info
+          style:
+            left: 22%
+            top: 4%    
+            opacity: 0.5  
+            color: white
+
+        - type: state-label
+          entity: sensor.temperature_158d0001573ea5
+          style:
+            left: 22%
+            top: 7%
+            opacity: 0.5
+            color: white
+
+        - type: icon
+          icon: mdi:water
+          entity: sensor.humidity_158d0001573ea5
+          tap_action: more-info
+          style:
+            left: 36%
+            top: 4%    
+            opacity: 0.5   
+            color: white
+        - type: state-label
+          entity: sensor.humidity_158d0001573ea5
+          style:
+            left: 36%
+            top: 7%
+            opacity: 0.5
+            color: white
 
         - type: image
           tap_action: toggle
@@ -676,6 +813,38 @@ views:
             left: 44%
             width: 34.5%
 
+        - type: icon
+          icon: mdi:temperature-celsius
+          entity: sensor.temperature_158d000159f070
+          tap_action: more-info
+          style:
+            right: 58%
+            top: 93.5%    
+            opacity: 0.5  
+
+        - type: state-label
+          entity: sensor.temperature_158d000159f070
+          style:
+            right: 50%
+            top: 96%
+            opacity: 0.5
+
+        - type: icon
+          icon: mdi:water
+          entity: sensor.humidity_158d000159f070
+          tap_action: more-info
+          style:
+            right: 47%
+            top: 93.5%   
+            opacity: 0.5   
+
+        - type: state-label
+          entity: sensor.humidity_158d000159f070
+          style:
+            right: 39%
+            top: 96%
+            opacity: 0.5
+
         - type: image
           tap_action: toggle
           entity: automation.dummy
@@ -687,3 +856,38 @@ views:
             top: 18.5%
             left: 74.5%
             width: 40.9%
+
+        - type: icon
+          icon: mdi:temperature-celsius
+          entity: sensor.temperature_158d00015aea48
+          tap_action: more-info
+          style:
+            left: 67%
+            top: 4%    
+            opacity: 0.5  
+            color: white
+
+        - type: state-label
+          entity: sensor.temperature_158d00015aea48
+          style:
+            left: 67%
+            top: 7%
+            opacity: 0.5
+            color: white
+
+        - type: icon
+          icon: mdi:water
+          entity: sensor.humidity_158d00015aea48
+          tap_action: more-info
+          style:
+            left: 81%
+            top: 4%    
+            opacity: 0.5   
+            color: white
+        - type: state-label
+          entity: sensor.humidity_158d00015aea48
+          style:
+            left: 81%
+            top: 7%
+            opacity: 0.5
+            color: white
