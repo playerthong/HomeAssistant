@@ -26,9 +26,21 @@
      - service: notify.telegram
        data:
         message: 'Все ушли из дома. Выключаем свет.'
-     - service: script.turn_on
-       entity_id: script.turn_off_all_lights
-
+    #  - service: script.turn_on
+    #    entity_id: script.turn_off_all_lights
+     - service: light.turn_off
+       entity_id: light.gateway_light_f0b429cc3ea7
+     - service: light.turn_off
+       entity_id: light.yeebedroom
+     - service: light.turn_off
+       entity_id: light.yeebigroom
+     - service: switch.turn_off
+       entity_id: switch.wall_switch_158d00014ddc4f
+     - service: switch.turn_off
+       entity_id: switch.wall_switch_left_158d00012bad35
+     - service: switch.turn_off
+       entity_id: switch.wall_switch_right_158d00012bad35
+       
 - alias: Pavel leave work
   trigger:
     - platform: state
