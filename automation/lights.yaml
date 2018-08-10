@@ -1,0 +1,81 @@
+- alias: xiaomi landing brighten on
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d000186eb37
+        click_type: long_click_press
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'off'
+    - condition: state
+      entity_id: light.landing_light
+      state: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.brighten_light_landing
+      
+- alias: xiaomi landing brighten off
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.switch_158d000186eb37
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'off'
+    - condition: state
+      entity_id: light.landing_light
+      state: 'on'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.landing_dim
+      
+- alias: xiaomi landing dim on
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.switch_158d000186eb37
+        click_type: long_click_press
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'on'
+    - condition: state
+      entity_id: light.landing_light
+      state: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.dim_light_landing
+
+- alias: xiaomi landing brighten off
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.switch_158d000186eb37
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'on'
+    - condition: state
+      entity_id: light.landing_light
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.landing_dim

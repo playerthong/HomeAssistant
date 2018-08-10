@@ -1,0 +1,29 @@
+dim_light_landing:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'on'
+  
+    - service: light.turn_on
+      entity_id: light.yeebedroom
+      data_template:
+        brightness: '{{states.light.yeebedroom.attributes.brightness - 10}}'
+    - service: script.turn_off
+      entity_id: script.dim_light_landing
+    - service: script.turn_on
+      entity_id: script.dim_light_landing
+
+brighten_light_landing:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.landing_dim
+      state: 'off'
+    - service: light.turn_on
+      entity_id: light.yeebedroom
+      data_template:
+        brightness: '{{states.light.yeebedroom.attributes.brightness + 10}}'
+    
+    - service: script.turn_off
+      entity_id: script.brighten_light_landing
+    - service: script.turn_on
+      entity_id: script.brighten_light_landing

@@ -32,6 +32,10 @@ from_work_on_auto:
   #initial: off
   icon: mdi:car
 
+landing_dim:
+  name: Landing Dim
+  initial: off
+
 dummy:
   name: dummy
   #initial: off
