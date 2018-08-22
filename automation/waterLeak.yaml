@@ -16,7 +16,7 @@
             Протечка на кухне устранена!
           {% else %}
           {% endif %}
-     - service: tts.google_say
+     - service: tts.yandextts_say
        entity_id: media_player.google_home
        data:
         message: >
@@ -45,7 +45,7 @@
             Протечка в ванной устранена!
           {% else %}
           {% endif %}
-     - service: tts.google_say
+     - service: tts.yandextts_say
        entity_id: media_player.google_home
        data:
         message: >
