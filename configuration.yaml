@@ -164,6 +164,8 @@ tts:
     language: 'ru'
   - platform: yandextts
     api_key: !secret yandex_tts_api
+    language: 'ru-RU'
+    voice: oksana
 
 device_tracker:
   - platform: bluetooth_tracker
