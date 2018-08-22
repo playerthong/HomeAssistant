@@ -162,6 +162,8 @@ switch:
 tts:
   - platform: google
     language: 'ru'
+  - platform: yandextts
+    api_key: !secret yandex_tts_api
 
 device_tracker:
   - platform: bluetooth_tracker
