@@ -48,7 +48,7 @@
       entity_id: input_boolean.disable_doorbell
       state: 'off'
   action:
-    - service: vacuum.toggle
+    - service: vacuum.start
       entity_id: vacuum.xiaomi_vacuum_cleaner
 
 - alias: Exit button Vacuum on childsleep on
