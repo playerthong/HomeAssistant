@@ -215,6 +215,23 @@ views:
             background-color: rgb(54, 65, 78)
             opacity: 0.8
 
+
+      - type: picture-elements
+        image: /local/plants.jpg
+        elements:
+          - type: state-badge
+            entity: sensor.flower_1_moisture
+            style:
+              top: 27%
+              left: 10%
+              --ha-label-badge-font-size: 1em
+          - type: state-label
+            entity: sensor.flower_1_temperature
+            style:
+              top: 15%
+              left: 92%
+              --ha-label-badge-font-size: 1em
+
       - type: map
         aspect_ratio: 100%
         entities:
