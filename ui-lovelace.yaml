@@ -215,6 +215,15 @@ views:
             background-color: rgb(54, 65, 78)
             opacity: 0.8
 
+      - type: entities
+        title: Цветы
+        show_header_toggle: false
+        entities:
+          - sensor.flower_1_battery
+          - sensor.flower_1_conductivity
+          - sensor.flower_1_light_intensity
+          - sensor.flower_1_moisture
+          - sensor.flower_1_temperature
 
       - type: picture-elements
         image: /local/plants.jpg
