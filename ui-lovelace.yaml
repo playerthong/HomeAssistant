@@ -225,21 +225,21 @@ views:
           - sensor.flower_1_moisture
           - sensor.flower_1_temperature
 
-      - type: picture-elements
-        image: /local/plants.jpg
-        elements:
-          - type: state-badge
-            entity: sensor.flower_1_moisture
-            style:
-              top: 27%
-              left: 10%
-              --ha-label-badge-font-size: 1em
-          - type: state-label
-            entity: sensor.flower_1_temperature
-            style:
-              top: 15%
-              left: 92%
-              --ha-label-badge-font-size: 1em
+      # - type: picture-elements
+      #   image: /local/plants.jpg
+      #   elements:
+      #     - type: state-badge
+      #       entity: sensor.flower_1_moisture
+      #       style:
+      #         top: 27%
+      #         left: 10%
+      #         --ha-label-badge-font-size: 1em
+      #     - type: state-label
+      #       entity: sensor.flower_1_temperature
+      #       style:
+      #         top: 15%
+      #         left: 92%
+      #         --ha-label-badge-font-size: 1em
 
       - type: map
         aspect_ratio: 100%
