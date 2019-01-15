@@ -668,7 +668,8 @@ views:
             -webkit-font-smoothing: antialiased
 
         - type: image
-          tap_action: toggle
+          tap_action:
+            action: toggle
           entity: switch.wall_switch_left_158d00012bad35
           image: /local/Floorplan2/kitchen.png
           state_filter:
@@ -722,7 +723,8 @@ views:
 
       
         - type: image
-          tap_action: toggle
+          tap_action:
+            action: toggle
           entity: switch.wall_switch_158d00014ddc4f
           image: /local/Floorplan2/hallway.png
           state_filter:
@@ -734,7 +736,8 @@ views:
             width: 56%
       
         - type: image
-          tap_action: toggle
+          tap_action:
+            action: toggle
           entity: light.yeebigroom
           image: /local/Floorplan2/living_room.png
           state_filter:
@@ -782,7 +785,8 @@ views:
             color: white
 
         - type: image
-          tap_action: toggle
+          tap_action: 
+            action: toggle
           entity: light.yeebedroom
           image: /local/Floorplan2/bedroom.png
           state_filter:
@@ -829,7 +833,8 @@ views:
             color: white
 
         - type: image
-          tap_action: toggle
+          tap_action:
+            action: toggle
           entity: switch.wall_switch_right_158d00012bad35
           image: /local/Floorplan2/bathroom.png
           state_filter:
@@ -873,7 +878,8 @@ views:
             opacity: 0.5
 
         - type: image
-          tap_action: toggle
+          tap_action:
+            action: toggle
           entity: automation.dummy
           image: /local/Floorplan2/child.png
           state_filter:

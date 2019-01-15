@@ -1,12 +1,12 @@
 
-- platform: travisci
-  api_key: !secret travis_api
-  repository:
-    - HomeAssistant
-  branch:
-    - master
-  monitored_conditions:
-    - last_build_state
+#- platform: travisci
+#  api_key: !secret travis_api
+#  repository:
+#    - HomeAssistant
+#  branch:
+#    - 'master'
+#  monitored_conditions:
+#    - last_build_state
 
 - platform: cert_expiry
   host: !secret base_url

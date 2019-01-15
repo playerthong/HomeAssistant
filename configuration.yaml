@@ -8,6 +8,9 @@ homeassistant:
   customize: !include_dir_merge_named customize
   customize_glob: !include customglob.yaml
 
+lovelace:
+  mode: yaml
+
 zone:
   - name: Home
     latitude: !secret home_lat
@@ -52,22 +55,27 @@ logbook:
 system_log:
 map:
 sun:
-cloud:
-  google_actions:
-    entity_config:
-      input_boolean.thermobool:
-        name: Custom Name for Google Assistant AC
-        aliases:
-         - Conditioner
-      switch.wall_switch_left_158d00012bad35:
-        name: Custom Name for Google Assistant kitchen
-        aliases:
-         - kitchen light
+#cloud:
+#  google_actions:
+#    entity_config:
+#      input_boolean.thermobool:
+#        name: Custom Name for Google Assistant AC
+#        aliases:
+#         - Conditioner
+#      switch.wall_switch_left_158d00012bad35:
+#        name: Custom Name for Google Assistant kitchen
+#        aliases:
+#         - kitchen light
 
 google_assistant:
   project_id: !secret gass_id
-  client_id: !secret gass_client
-  access_token: !secret gass_token
+  api_key: !secret google_api
+#  exposed_domains:
+#    - SWITCH
+#    - LIGHT
+#    - GROUP
+#  client_id: !secret gass_client
+#  access_token: !secret gass_token
 
 light:
   - platform: yeelight
@@ -259,6 +267,6 @@ input_number: !include devices/input_number.yaml
 input_select: !include devices/input_select.yaml
 #shell_command: !include_dir_merge_list shell/
 shell_command: !include shell/shell_commands.yaml
-dialogflow:
+#dialogflow:
 
 

@@ -1,15 +1,15 @@
-- id: water_the_flower
-  alias: water_the_flower
-  # trigger:
-  #   platform: state
-  #   entity_id: group.presence
-  #   from: not_home
-  #   to: home
-  condition:
-    condition: numeric_state
-    entity_id: sensor.flower_1_moisture
-    below: 10
-  action:
-  - service: notify.telegram
-    data:
-     message: 'Пора полить толстянку!'
+#- id: water_the_flower
+#  alias: water_the_flower
+#  # trigger:
+#  #   platform: state
+#  #   entity_id: group.presence
+#  #   from: not_home
+#  #   to: home
+#  condition:
+#    condition: numeric_state
+#    entity_id: sensor.flower_1_moisture
+#    below: 10
+#  action:
+#  - service: notify.telegram
+#    data:
+#     message: 'Пора полить толстянку!'
