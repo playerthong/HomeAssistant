@@ -2,18 +2,18 @@
 - alias: XSwitch computer click
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0001560e5a
       click_type: single
   action:
     - service: light.toggle
-      entity_id: light.YeeBigRoom
+      entity_id: light.yeebigroom
 
 - alias: XSwitch computer double click
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0001560e5a
       click_type: double
@@ -26,7 +26,7 @@
 - alias: XSwitch computer long press
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0001560e5a
       click_type: long_click_press
@@ -39,7 +39,7 @@
 - alias: Exit button Vacuum on childsleep off
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d000113cc10
       click_type: single
@@ -54,7 +54,7 @@
 - alias: Exit button Vacuum on childsleep on
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d000113cc10
       click_type: single
@@ -66,3 +66,15 @@
      - service: notify.telegram
        data:
         message: 'Активирован режим детского сна. Для запуска пылесоса выключите этот режим'
+
+
+- alias: Exit button Vacuum off double click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d000113cc10
+      click_type: double
+  action:
+    - service: vacuum.return_to_base
+      entity_id: vacuum.xiaomi_vacuum_cleaner

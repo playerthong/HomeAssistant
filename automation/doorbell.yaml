@@ -1,7 +1,7 @@
 - alias: DoorBell ON
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0001a6676b
       click_type: single
@@ -26,7 +26,7 @@
 - alias: DoorBell OFF
   trigger:
     platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0001a6676b
       click_type: single
